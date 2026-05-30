@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnLifeRP — Deine Welt, dein Spiel</title>
+    <meta name="description" content="Onlife ist mehr als nur ein FiveM Server – es ist eine GTA 5 Roleplay Community mit Charakter, Erfahrung und Herz. Seit über 5 Jahren.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Glowing Background Lights -->
+    <div class="ambient-glow">
+        <div class="glow-orb orb-purple"></div>
+        <div class="glow-orb orb-cyan"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" onclick="switchPage('home')">
+                <span class="logo-accent">OnLife</span><span class="logo-text">RP</span>
+            </a>
+            
+            <nav class="nav-links">
+                <button class="nav-btn active" id="btn-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Start</button>
+                <button class="nav-btn" id="btn-grundlagen" onclick="switchPage('grundlagen')"><i class="fa-solid fa-graduation-cap"></i> Grundlagen</button>
+                <button class="nav-btn" id="btn-infos" onclick="switchPage('infos')"><i class="fa-solid fa-circle-info"></i> Infos</button>
+                <button class="nav-btn" id="btn-regeln" onclick="switchPage('regeln')"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
+                <button class="nav-btn" id="btn-gesetze" onclick="switchPage('gesetze')"><i class="fa-solid fa-book-scale"></i> Gesetze</button>
+                <button class="nav-btn" id="btn-galerie" onclick="switchPage('galerie')"><i class="fa-solid fa-images"></i> Galerie</button>
+                <button class="nav-btn" id="btn-impressum" onclick="switchPage('impressum')"><i class="fa-solid fa-scale-balanced"></i> Impressum</button>
+            </nav>
+
+            <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="discord-cta">
+                <i class="fa-brands fa-discord"></i> Discord beitreten
+            </a>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-nav-btn active" id="m-btn-home" onclick="switchPage('home'); toggleMobileMenu()"><i class="fa-solid fa-house"></i> Startseite</button>
+        <button class="mobile-nav-btn" id="m-btn-grundlagen" onclick="switchPage('grundlagen'); toggleMobileMenu()"><i class="fa-solid fa-graduation-cap"></i> Grundlagen</button>
+        <button class="mobile-nav-btn" id="m-btn-infos" onclick="switchPage('infos'); toggleMobileMenu()"><i class="fa-solid fa-circle-info"></i> Infos</button>
+        <button class="mobile-nav-btn" id="m-btn-regeln" onclick="switchPage('regeln'); toggleMobileMenu()"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
+        <button class="mobile-nav-btn" id="m-btn-gesetze" onclick="switchPage('gesetze'); toggleMobileMenu()"><i class="fa-solid fa-book-scale"></i> Gesetze</button>
+        <button class="mobile-nav-btn" id="m-btn-galerie" onclick="switchPage('galerie'); toggleMobileMenu()"><i class="fa-solid fa-images"></i> Galerie</button>
+        <button class="mobile-nav-btn" id="m-btn-impressum" onclick="switchPage('impressum'); toggleMobileMenu()"><i class="fa-solid fa-scale-balanced"></i> Impressum</button>
+        <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="mobile-discord-cta">
+            <i class="fa-brands fa-discord"></i> Discord beitreten
+        </a>
+    </div>
+
+    <!-- MAIN PAGES CONTAINER -->
+    <main class="pages-container">
+
+        <!-- ================= PAGE: STARTSEITE ================= -->
+        <section class="page active" id="page-home">
+            <!-- Hero Section -->
+            <div class="hero-block">
+                <div class="hero-text">
+                    <span class="hero-tagline"><i class="fa-solid fa-circle-check"></i> Seit über 5 Jahren aktiv</span>
+                    <h1 class="hero-title">Willkommen auf <span class="gradient-text">OnLife RP</span></h1>
+                    <p class="hero-desc">Deine Welt, dein Spiel. Ein ausgereiftes GTA V Roleplay-Konzept mit viel Liebe zum Detail, stabilen Systemen, fairem Umgang und konstanter Weiterentwicklung.</p>
+                    <div class="hero-btns">
+                        <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-primary"><i class="fa-brands fa-discord"></i> Jetzt Discord beitreten</a>
+                        <button onclick="switchPage('grundlagen')" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Grundlagen lesen</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-gta-card">
+                        <div class="card-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="bar-title">onlife_rp_connect.json</span>
+                        </div>
+                        <div class="card-code">
+                            <pre><code>{
+  <span class="k">"serverName"</span>: <span class="s">"OnLife RP"</span>,
+  <span class="k">"plattform"</span>: <span class="s">"FiveM"</span>,
+  <span class="k">"voice"</span>: <span class="s">"SaltyChat / IngameVoice"</span>,
+  <span class="k">"status"</span>: <span class="s">"Online"</span>,
+  <span class="k">"community"</span>: <span class="s">"Mit Herz & Erfahrung"</span>
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Info Grid -->
+            <div class="info-intro-section">
+                <div class="section-title-wrap">
+                    <h2>Onlife – Deine Welt, dein Spiel</h2>
+                    <p>Onlife ist mehr als nur ein Server – es ist eine Community mit Charakter, Erfahrung und Herz. Seit über 5 Jahren entwickeln wir unser Projekt stetig weiter, immer mit dem Ziel, ein faires und unterhaltsames Spielerlebnis zu bieten. Wir wissen, was funktioniert – und wir hören zu. Unsere Spieler*innen stehen im Mittelpunkt, und genau das macht Onlife zu dem, was es ist: Ein Ort, an dem man gerne bleibt.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h3>Ausgereiftes Konzept</h3>
+                        <p>Ein bis ins Detail durchdachtes Regelwerk und Spielkonzept sorgen für immersives und realistisches RP.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Stabile Systeme</h3>
+                        <p>Professionelles Hosting bei Avoro und ständige Optimierung garantieren maximale Performance und Lags-Freiheit.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feat-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Gemeinsames Wachstum</h3>
+                        <p>Bei uns steht die Community im Mittelpunkt. Jede Idee, jede Stimme und jedes Mitglied findet Gehör.</p>
+                    </div>
+                </div>
+
+                <div class="welcome-box">
+                    <p><strong>Onlife ist keine schnelle Idee – sondern ein langfristiges Projekt mit Substanz. Wenn du Teil davon werden willst, bist du jederzeit herzlich willkommen!</strong></p>
+                    <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-primary"><i class="fa-solid fa-door-open"></i> Werde Teil unserer Community</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: GRUNDLAGEN ================= -->
+        <section class="page" id="page-grundlagen">
+            <div class="section-header">
+                <span class="section-badge">Einsteigerfreundlich</span>
+                <h1>Grundlagen für dein neues Leben</h1>
+                <p>Onlife RP ist ein einsteigerfreundlicher RP-Server, bei dem du nicht gleich für jeden Fehler gebannt wirst. Hier erfährst du, wie du dich perfekt verhältst.</p>
+            </div>
+
+            <div class="text-layout">
+                <div class="text-card">
+                    <h2><i class="fa-solid fa-theater-masks text-accent"></i> Deine Rolle & Vorbereitung</h2>
+                    <p>Du tauchst in eine Rolle ein, die sich weiterentwickelt und an Erfahrung sammelt. Es ist noch kein Meister vom Himmel gefallen, daher ist es wichtig, dass du, bevor du den Server betrittst, die Regeln gelesen und verstanden hast. Überlege dir zuvor genau, was für einen Charakter du spielen möchtest, um dich so gut wie möglich in die Rolle hineinzuversetzen.</p>
+                    
+                    <div class="example-quote">
+                        <strong>💡 Ein praktisches Beispiel zum Thema Realismus:</strong>
+                        <p>Solltest du einmal Essen bestellt haben und es an der Tür klingeln oder du bekommst unerwartet Besuch, sag niemals: <em>"Es klingelt, ich komm gleich wieder"</em>. Lass dir stattdessen etwas einfallen, das zum RP passt. Ein kleines Beispiel wäre: <em>"Ich muss mal eben kurz in Ruhe telefonieren"</em>, du stellst dich abseits und nimmst dein Handy in die Hand. Dann kannst du in Ruhe die Tür öffnen. Sollte der Besuch bleiben, logge dich niemals einfach aus, sondern bring die RP-Situation zu Ende und lege dich dann schlafen.</p>
+                    </div>
+                </div>
+
+                <div class="text-card">
+                    <h2><i class="fa-solid fa-heart text-accent"></i> Ruhe & Gelassenheit</h2>
+                    <p>Wurdest du deiner Meinung nach ungerecht behandelt und jemand hat womöglich gegen die Serverregeln verstoßen? <strong>Bleib ruhig und gelassen.</strong> Weise die Person im Spiel niemals darauf hin, indem du Dinge sagst wie: <em>"Das darfst du nicht, das verstößt gegen die Regeln"</em> oder <em>"Ich habe das aufgezeichnet und schicke eine Eule los"</em>.</p>
+                    <p>Bleib entspannt, lass die Situation geschehen und spiel die RP-Situation zu Ende. Danach kannst du im Discord ein Ticket schreiben oder direkt in den Discord-Support-Channel kommen, um den Regelverstoß zu melden. Beachte, dass Regelverstöße immer mit einem ungeschnittenen Videobeweis belegt werden müssen.</p>
+                    
+                    <div class="tip-box">
+                        <strong><i class="fa-solid fa-volume-xmark"></i> Störende Nebengeräusche vermeiden:</strong>
+                        <p>Achte immer darauf, dass deine Umgebung zu Hause vor dem Rechner ruhig ist. Spielende Kinder, Kreischgeräusche oder ein lauter TV im Hintergrund stören das Spielerlebnis anderer massiv. Wir empfehlen dringend die Nutzung von <strong>Push-to-Talk (PTT)</strong>, um störende Hintergrundgeräusche herauszufiltern.</p>
+                    </div>
+                </div>
+
+                <div class="text-card text-center">
+                    <h2><i class="fa-solid fa-plane-arrival text-accent"></i> Bereit für die Einreise?</h2>
+                    <p>Dann kann es auch schon losgehen. Du wirst einreisen und dein neues Leben kann beginnen. Wie würdest du dich im echten Leben verhalten, wenn du in einen neuen Staat einreist? Denk immer nach, bevor du handelst, ob das, was du vorhast, auch wirklich realistisch ist.</p>
+                    <button onclick="switchPage('regeln')" class="btn btn-secondary"><i class="fa-solid fa-gavel"></i> Serverregeln lesen</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: INFOS ================= -->
+        <section class="page" id="page-infos">
+            <div class="section-header">
+                <span class="section-badge">Technik & Partner</span>
+                <h1>Informationen & Plattformen</h1>
+                <p>Unsere technische Basis und Plattformen, die OnLifeRP erst möglich machen.</p>
+            </div>
+
+            <div class="info-cards-grid">
+                <!-- Discord -->
+                <div class="info-card">
+                    <div class="info-icon-large discord-color"><i class="fa-brands fa-discord"></i></div>
+                    <h2>Discord – Deine Anlaufstelle</h2>
+                    <p>Unser Discord-Server ist der Herzschlag unserer Community. Hier erhältst du alle wichtigen Informationen rund um den Server – von aktuellen News und Events bis hin zu Updates, Support und direktem Austausch mit anderen Spielern. Bleib immer auf dem Laufenden und werde Teil der aktiven Community!</p>
+                    <a href="https://discord.gg/vQnxbc9" target="_blank" class="card-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> discord.gg/onliferp</a>
+                </div>
+
+                <!-- SaltyChat -->
+                <div class="info-card">
+                    <div class="info-icon-large salty-color"><i class="fa-solid fa-headset"></i></div>
+                    <h2>SaltyChat – Ingame Sprachchat</h2>
+                    <p>Für ein immersives Spielerlebnis setzen wir auf SaltyChat. Dieses Voice-System sorgt für realitätsnahe Kommunikation direkt im Spiel – mit 3D-Audio, Funkkanälen und Notrufen. Ob Flüstern, Schreien oder Funken – jede Situation klingt so, wie sie soll. Ganz ohne externe Tools, direkt ins RP integriert.</p>
+                    <span class="card-badge">SaltyChat integriert</span>
+                </div>
+
+                <!-- FiveM -->
+                <div class="info-card">
+                    <div class="info-icon-large fivem-color"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h2>FiveM – Die Plattform</h2>
+                    <p>FiveM ist die Grundlage unseres Servers und ermöglicht es uns, ein einzigartiges und individuell gestaltetes Spielerlebnis abseits des klassischen GTA Online zu bieten. Dank dieser Modifikation können wir eigene Scripts, Fahrzeuge, Maps und Gameplay-Elemente integrieren – ganz nach den Wünschen unserer Community.</p>
+                    <a href="https://fivem.net/" target="_blank" class="card-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> fivem.net</a>
+                </div>
+
+                <!-- Avoro -->
+                <div class="info-card">
+                    <div class="info-icon-large avoro-color"><i class="fa-solid fa-server"></i></div>
+                    <h2>Avoro – Zuverlässiges Hosting</h2>
+                    <p>Avoro ist unser Partner für zuverlässiges Serverhosting und professionelle Infrastruktur. Dank Avoro läuft unser Server stabil, sicher und performant – damit du ohne Unterbrechungen ins Roleplay eintauchen kannst. Mit modernster Technik und erstklassigem Support sorgt Avoro dafür, dass unser Projekt immer rund läuft.</p>
+                    <a href="https://avoro.eu/de" target="_blank" class="card-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> avoro.eu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: SERVERREGELN ================= -->
+        <section class="page" id="page-regeln">
+            <div class="section-header">
+                <span class="section-badge">Regelwerk</span>
+                <h1>Serverregeln & Richtlinien</h1>
+                <p>Ein faires Miteinander basiert auf klaren Regeln. Bitte lies dir das Regelwerk aufmerksam durch.</p>
+                
+                <!-- Rules Search Bar (Blows them away!) -->
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="rulesSearch" placeholder="Regeln durchsuchen... (z.B. VDM, RDM, Support, Plünderung)..." onkeyup="filterRules()">
+                    <button class="clear-search" id="clearRulesSearch" onclick="clearSearch('rulesSearch')"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <!-- Rules Quick Overview Accordion -->
+            <div class="rules-main-wrap">
+                <!-- Red Alert Box for crucial rules -->
+                <div class="rules-warning-alert">
+                    <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="alert-text">
+                        <h3>Wichtige Kernregeln auf einem Blick:</h3>
+                        <ul>
+                            <li><strong>Lebensschutz:</strong> Das Leben ist das höchste Gut. Schütze es unter allen Umständen.</li>
+                            <li><strong>RDM & VDM:</strong> Random Deathmatch (grundlos töten) und Vehicle Deathmatch (mutwillig überfahren) sind strengstens verboten.</li>
+                            <li><strong>Supportfälle:</strong> Nur über das Ticketsystem auf Discord und IMMER mit ungeschnittenem Videobeweis!</li>
+                            <li><strong>OOC & Begriffe:</strong> Keine OOC-Gespräche oder Begriffe wie "Admin", "Support", "RDM", "Call" im Ingame-RP!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Rules Categories Accordion -->
+                <div class="accordion" id="rulesAccordion">
+                    
+                    <!-- Category 1 -->
+                    <div class="accordion-item" id="rule-cat-allgemein">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-allgemein')">
+                            <span><i class="fa-solid fa-circle-info header-icon"></i> §1.0 Allgemeines & Support</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Mit dem Betreten des Servers akzeptiert Ihr die geltenden Serverregeln.</li>
+                                <li>OOC (Out of Character) Gespräche sollten vermieden werden.</li>
+                                <li>Der Besitz von Polizeiwaffen ist verboten, wenn man nicht Angehöriger der Polizei ist.</li>
+                                <li>Der Aufenthalt auf den Geländen der Staatsfraktionen ist verboten, es sei denn, es dient dem RP.</li>
+                                <li>Auf dem Server wird <strong>DEUTSCH</strong> gesprochen und geschrieben. Einzelne Wörter in einer Fremdsprache dürfen in einem plausiblen Kontext verwendet werden.</li>
+                                <li>Jegliche Synonyme für den Support (wie z.B. "Suppenküche") dürfen nicht benutzt werden.</li>
+                                <li>Der Server behält sich das Recht vor, zu jedem Zeitpunkt Spieler auszuschließen, deren Roleplay als unangemessen betrachtet wird.</li>
+                                <li>Supportfälle müssen immer zu jedem Zeitpunkt über das Ticketsystem auf Discord eröffnet werden. Wir benötigen alle Informationen in einem Ticket.</li>
+                                <li>Beleidigungen im Roleplay müssen so rübergebracht werden, dass der Supporter/in, der deinen Fall bearbeitet, nicht das Gefühl hat, es könnte OOC gemeint sein. Überlegt euch also gut, wie ihr beleidigt.</li>
+                                <li>Bild- und Videomaterial, welches zu Beweiszwecken dienen soll, wird nur unbearbeitet gesichtet und akzeptiert.</li>
+                                <li>Du bist selbst für deinen Charakter verantwortlich – stirbst du AFK, ist das dein Fehler.</li>
+                                <li><strong>Ohne Videobeweis kein Support!!!</strong> Nutzt Tools wie <a href="https://medal.tv/" target="_blank" style="color:var(--cyan);text-decoration:underline;">Medal</a> oder ähnliches zur permanenten Aufnahme.</li>
+                                <li>Unwissenheit schützt vor Strafe nicht!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="accordion-item" id="rule-cat-leben">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-leben')">
+                            <span><i class="fa-solid fa-heart header-icon"></i> §2.0 - §5.0 Leben, VDM, RDM & Safe Zones</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§2.0 Das Leben</h3>
+                            <ul>
+                                <li>Das Leben ist das höchste Gut. Jedem Spieler soll bewusst sein, dass er das Leben unter allen Umständen zu schützen hat. Das Leben darf nicht für materielle Dinge gefährdet oder geopfert werden.</li>
+                                <li>Ebenso ist Suizid verboten, da er meist als Flucht vor materiellem Verlust genutzt wird.</li>
+                                <li>Ein Spieler darf nicht dazu gezwungen werden: Geld von der Bank abzuheben, Fahrzeuge jeglicher Art auszuparken, das Inventar dieser zur Verfügung zu stellen oder deren Schlüssel weiterzugeben, um sein eigenes Leben zu schützen.</li>
+                            </ul>
+
+                            <h3>§3.0 Vehicle Deathmatch (VDM)</h3>
+                            <ul>
+                                <li>Das absichtliche Überfahren von Spielern (VDM) ist untersagt! Dazu zählt auch, sich absichtlich vor ein fahrendes Fahrzeug zu werfen.</li>
+                                <li>Wichtig bei VDM: Man muss unterscheiden, ob es sich um einen normalen Verkehrsunfall handelt oder ob jemand mutwillig überfahren wurde.</li>
+                            </ul>
+
+                            <h3>§4.0 Random Deathmatch (RDM)</h3>
+                            <ul>
+                                <li>Das willkürliche Töten von Spielern ist verboten und wird als RDM bezeichnet.</li>
+                                <li>Das Eingreifen (bzw. tödliche Eingreifen) in eine fremde, bestehende Handlung ist verboten und zählt ebenfalls als RDM.</li>
+                                <li>Das Töten oder Verletzen eines Spielers ohne RP-Hintergrund/Ankündigung ist verboten.</li>
+                            </ul>
+
+                            <h3>§5.0 Sichere Zonen (Safe Zones)</h3>
+                            <p>In diesen Bereichen sind feindliche Aktionen (Überfälle, Schießereien, Entführungen) verboten:</p>
+                            <ul>
+                                <li>Hospital (Krankenhaus)</li>
+                                <li>Würfelpark (Zentraler Treffpunkt)</li>
+                                <li>Alle legalen Farmrouten (grün gekennzeichnet)</li>
+                                <li>Eventzonen (30 Min vor und nach eines Events)</li>
+                                <li>Staatsgefängnis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="accordion-item" id="rule-cat-kriminalitaet">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-kriminalitaet')">
+                            <span><i class="fa-solid fa-mask header-icon"></i> §6.1 - §6.5 Aktivitäten, Raub & Überfälle</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§6.1 AFK Farming</h3>
+                            <ul>
+                                <li>Auf legalen Routen (grün gekennzeichnet) ist AFK Farmen erlaubt, dies gilt als sichere Zone.</li>
+                                <li>Auf illegalen Routen (rot) muss man zu jeder Zeit ansprechbar sein. Auf illegalen Routen darf ohne Vorwarnung und ersichtlichen Grund geschossen werden.</li>
+                            </ul>
+
+                            <h3>§6.2 Raubüberfälle & Geiselnahmen</h3>
+                            <ul>
+                                <li>Raubüberfälle (Geschäfte, Geldautomaten, Juwelier etc.) müssen bis zum Ende durchgeführt werden. Es ist verboten, den Alarm auszulösen und sich dann zu verstecken, bis die Polizei weg ist, um die Beute in Ruhe zu holen (Cop Baiting).</li>
+                                <li><strong>Geiselnahme:</strong> Das Nehmen von Fake-Geiseln (bezahlte Spieler oder eigene Gangmitglieder) ist verboten.</li>
+                                <li>Der NPC-Verkäufer darf nicht als Geisel genommen werden!</li>
+                                <li>Für eine Geisel darf maximal ein Lösegeld von <strong>50.000 $</strong> verlangt werden.</li>
+                            </ul>
+
+                            <h3>§6.3 Ausgeben als Staatsdiener</h3>
+                            <ul>
+                                <li>Es ist verboten, sich als Staatsfraktion auszugeben oder deren Kleidung zu tragen.</li>
+                                <li>Das Stehlen von Staatsfraktionsfahrzeugen ist ohne triftigen RP-Grund verboten.</li>
+                            </ul>
+
+                            <h3>§6.4 Überfälle & Diebstahl</h3>
+                            <ul>
+                                <li>Es darf niemand gezwungen werden, Sachen abzugeben, die er nicht unmittelbar dabei hat (z. B. Geld abheben, Auto ausparken).</li>
+                                <li>Es ist verboten, Neuankömmlinge am Flughafen zu überfallen.</li>
+                            </ul>
+
+                            <h3>§6.5 Funkdisziplin</h3>
+                            <ul>
+                                <li>Das Abhören fremder Funks oder das gezielte Spionieren in fremden Funkkanälen ist verboten.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="accordion-item" id="rule-cat-fraktionen">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-fraktionen')">
+                            <span><i class="fa-solid fa-shield header-icon"></i> §6.6 - §6.9 Fraktionen & Staatsorgane</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§6.6 Fraktionssperre</h3>
+                            <ul>
+                                <li>Wenn man eine Fraktion (Organisation oder staatlich) verlässt, erhält man eine 7-tägige Sperre.</li>
+                            </ul>
+
+                            <h3>§6.7 Bad Fraktionen (Gangs & Mafien)</h3>
+                            <ul>
+                                <li>Mitglieder müssen klar als solche zu erkennen sein.</li>
+                                <li>Maximale Mitgliederzahl liegt bei <strong>15 Mitgliedern</strong>. Das Gründen einer Zweit-Gang zur Umgehung ist untersagt.</li>
+                                <li>Direktes Verbünden ist verboten (Nichtangriffspakte sind erlaubt).</li>
+                            </ul>
+
+                            <h3>§6.8 Inoffizielle Fraktionen</h3>
+                            <ul>
+                                <li>Dürfen bei kriminellen Aktionen mit maximal <strong>5 Personen</strong> agieren und müssen einheitlich gekleidet sein.</li>
+                            </ul>
+
+                            <h3>§6.9 Staatsfraktionen (LSPD & LSMD)</h3>
+                            <ul>
+                                <li><strong>Dienstzeit:</strong> Für Staatsfraktionen besteht eine verpflichtende Dienstzeit von <strong>18:00 bis 23:00 Uhr</strong>.</li>
+                                <li>Das Looten/Ausrauben von Medizinern, Mechanikern und Polizisten (Dienstwaffen & Dienstgegenstände) ist verboten.</li>
+                                <li><strong>Korruptionsverbot:</strong> Für Staatsfraktionen (LSPD/LSMD) ist Korruption strengstens untersagt! Dazu zählt: Drogenbesitz/Handel, Verkauf von Dienstwaffen/Munition, Verkauf von Medikits an Privatpersonen.</li>
+                                <li><strong>Razzia:</strong> Der Polizei ist maximal eine geplante Razzia pro Woche gestattet. Diese muss zuvor mit einem Admin abgesprochen werden.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 5 -->
+                    <div class="accordion-item" id="rule-cat-combats">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-combats')">
+                            <span><i class="fa-solid fa-gun header-icon"></i> §6.10 - §9.0 Auseinandersetzungen, Drittpartei & Gang-Kriege</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§6.10 Auseinandersetzungen & Plünderung</h3>
+                            <ul>
+                                <li>Bei einer laufenden Schießerei darf sich keine Drittpartei einmischen (Ausnahme: Polizei!).</li>
+                                <li><strong>Plünderung:</strong> Es dürfen maximal <strong>25% der Itemslots</strong> des Inventars geplündert werden. (Beispiel: Hat das Opfer 20 Slots, dürfen maximal 5 Slots abgenommen werden. Der Kofferraum zählt mit. Die Menge pro Slot ist egal).</li>
+                                <li><em>Ausnahme:</em> Die Polizei darf alle illegalen Gegenstände abnehmen.</li>
+                                <li><strong>O-Coins dürfen NIEMALS abgenommen werden!</strong></li>
+                            </ul>
+
+                            <h3>Routen-Regelung & Fraktions-Stammtisch</h3>
+                            <ul>
+                                <li>Jede Fraktion darf maximal eine Route gleichzeitig offiziell beanspruchen.</li>
+                                <li>Einigungen erfolgen über den Stammtisch (z.B. Gewinnbeteiligung, Einkaufen oder gemeinsame Nutzung).</li>
+                            </ul>
+
+                            <h3>§7.0 & §8.0 Großereignisse & Drittpartei</h3>
+                            <ul>
+                                <li>Bei Großereignissen müssen mindestens 5 Polizisten im Dienst sein.</li>
+                                <li>30 Minuten vor Server-Restart dürfen keine Raubüberfälle oder Geiselnahmen mehr begonnen werden.</li>
+                                <li>Drittpartei ist verboten (Sich einmischen in aktive Aktionen anderer Parteien).</li>
+                            </ul>
+
+                            <h3>§9.0 Gang-Krieg (Offiziell)</h3>
+                            <ul>
+                                <li><strong>Kriegsgebühr:</strong> 500.000 $ müssen bei der Polizei bezahlt werden.</li>
+                                <li>Dauer: Mindestens 96 Stunden, maximal 7 Tage. Während des Krieges gilt die RDM-Regel zwischen den beteiligten Fraktionen als aufgehoben. Das Gang-Outfit muss dauerhaft getragen werden.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 6 -->
+                    <div class="accordion-item" id="rule-cat-rp-regeln">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-rp-regeln')">
+                            <span><i class="fa-solid fa-skull header-icon"></i> §10.0 - §14.2 Metagaming, New-Life & Charaktertod</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§10.0 Metagaming & Power RP</h3>
+                            <ul>
+                                <li>Das Nutzen von OOC-Informationen im Spiel ist verboten.</li>
+                                <li>Das Nutzen von Discord während aktiver Raubzüge oder Schießereien ist verboten!</li>
+                                <li><strong>Power RP ist verboten:</strong> Aktionen, die dem Gegenüber keinerlei Reaktionsmöglichkeit lassen.</li>
+                            </ul>
+
+                            <h3>§11.0 Systemmängel & Exploits</h3>
+                            <ul>
+                                <li>Das Ausnutzen von Bugs, Duplizieren von Geld/Items oder das Kaufen/Verkaufen von Ingame-Werten gegen Echtgeld führt zum permanenten Bann.</li>
+                            </ul>
+
+                            <h3>§13.0 New-Life-Regel (Bewusstlosigkeit)</h3>
+                            <ul>
+                                <li>Während der Bewusstlosigkeit bekommt dein Charakter nichts mit und erinnert sich danach an keine Details (Personen, Farben, Kennzeichen).</li>
+                                <li>Wenn du am Friedhof respawnst, ist die RP-Situation für dich beendet. Du darfst dich dem Ort nicht wieder nähern oder erneut eingreifen.</li>
+                            </ul>
+
+                            <h3>§14.1 & §14.2 Charakter-Tod (Charakterlöschung) & Blood Out</h3>
+                            <ul>
+                                <li>Ein endgültiger Charaktertod löscht all dein Hab und Gut (Häuser, Autos, Geld) und muss zwingend vorher mit der Projektleitung abgesprochen und gut begründet sein.</li>
+                                <li>Ein <strong>Blood Out</strong> schließt dich gewaltsam aus einer Gang aus. Das Opfer vergisst alle internen Strukturen, Standorte und Pläne der Gang.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Category 7 -->
+                    <div class="accordion-item" id="rule-cat-gameplay">
+                        <button class="accordion-header" onclick="toggleAccordion('rule-cat-gameplay')">
+                            <span><i class="fa-solid fa-car header-icon"></i> §15.0 - §17.0 Fahrzeuge, Shops & Allgemeine Verbote</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <h3>§15.0 Fahrzeugregeln</h3>
+                            <ul>
+                                <li>Fahrzeuge auf dem Dach dürfen nicht per Tastendruck umgedreht werden.</li>
+                                <li>Fahrzeuge aus aktiven Aktionen (Verfolgungen, Raub etc.) dürfen erst 1 Stunde danach eingeparkt werden.</li>
+                                <li><strong>Fahruntüchtigkeit:</strong> Fahrzeuge, bei denen die Hälfte der Reifen zerstört ist, gelten als fahruntüchtig und dürfen nicht weitergefahren werden.</li>
+                                <li>Es dürfen maximal so viele Personen mitfahren, wie das Auto Türen hat.</li>
+                            </ul>
+
+                            <h3>§16.0 Wirtschaftslimitierungen (Shops & Tankstellen)</h3>
+                            <ul>
+                                <li><strong>Limit:</strong> Maximal 1 Tankstelle, 1 Shop und 1 Restaurant pro Spieler.</li>
+                                <li>Der Verkauf von Waffen in Spieler-Shops ist strengstens verboten (führt zur Löschung).</li>
+                                <li>Inaktive Geschäfte werden nach 6 bis 8 Wochen ohne Ankündigung gelöscht.</li>
+                            </ul>
+
+                            <h3>§17.0 Wichtige Verbote (Auszug)</h3>
+                            <ul>
+                                <li><strong>Vermummungsverbot:</strong> Das Tragen einer Vollmaskierung in der Öffentlichkeit ist verboten und wird von der Polizei bestraft.</li>
+                                <li>Jegliche sexuelle Belästigung oder Vergewaltigung im RP ist strengstens verboten.</li>
+                                <li>Bei Entführungen darf niemand gezwungen werden, sich auszuziehen.</li>
+                                <li>Sprechen im Zustand der Bewusstlosigkeit ist verboten.</li>
+                                <li>Abwerben von Spielern oder Serverwerbung führt zum direkten permanenten Bann!</li>
+                                <li><strong>Schussankündigung (Call):</strong> Gilt für 10 Minuten. Nach dem Call muss eine Reaktionszeit von 3 bis 5 Sekunden gewährt werden. Auf roten Farmrouten ist kein Schusscall nötig!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: GESETZE ================= -->
+        <section class="page" id="page-gesetze">
+            <div class="section-header">
+                <span class="section-badge">Strafgesetzbuch</span>
+                <h1>Das offizielle Gesetzbuch</h1>
+                <p>Die Gesetze des Staates OnLife. Alle Bürger sowie die Exekutive unterliegen diesem Gesetzbuch.</p>
+                
+                <!-- Law Search Bar -->
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="lawsSearch" placeholder="Gesetze durchsuchen... (z.B. Mord, Diebstahl, Notwehr, Drogen)..." onkeyup="filterLaws()">
+                    <button class="clear-search" id="clearLawsSearch" onclick="clearSearch('lawsSearch')"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <!-- Laws Navigation Tabs (Makes it look so premium!) -->
+            <div class="laws-tabs-nav">
+                <button class="law-tab-btn active" onclick="switchLawTab('law-gg')">§ Grundrechte</button>
+                <button class="law-tab-btn" onclick="switchLawTab('law-stgb')">Strafgesetzbuch (StGB)</button>
+                <button class="law-tab-btn" onclick="switchLawTab('law-waffg')">Waffengesetz</button>
+                <button class="law-tab-btn" onclick="switchLawTab('law-btmg')">Betäubungsmittel (BtMG)</button>
+            </div>
+
+            <!-- Law Content Panels -->
+            <div class="law-panels-wrap">
+
+                <!-- Tab panel 1: Grundrechte -->
+                <div class="law-panel active" id="panel-law-gg">
+                    <h2>Die Grundrechte des Staates</h2>
+                    <div class="law-grid" id="gg-grid">
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§1 GG</span>
+                            <h3>Gleichheit vor dem Gesetz</h3>
+                            <p>Alle Menschen sind vor dem Gesetz gleich. Niemand darf wegen seiner Herkunft, Religion, Aussehens, Geschlechts, Sprache oder Anschauung bevorzugt oder benachteiligt werden.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§2 GG</span>
+                            <h3>Menschenwürde</h3>
+                            <p>Die Würde des Menschen ist unantastbar.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§3 GG</span>
+                            <h3>Gleichberechtigung</h3>
+                            <p>Männer und Frauen sind in allen Hinsichten gleichberechtigt.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§4 GG</span>
+                            <h3>Freie Entfaltung</h3>
+                            <p>Jeder hat das Recht auf die freie Entfaltung seiner Persönlichkeit, soweit er nicht die Rechte anderer verletzt.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§5 GG</span>
+                            <h3>Meinungsfreiheit</h3>
+                            <p>Jeder hat das Recht, seine Meinung in Wort, Schrift und Bild frei zu äußern.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§6 GG</span>
+                            <h3>Körperliche Unversehrtheit</h3>
+                            <p>Jeder hat das Recht auf Leben und körperliche Unversehrtheit.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§7 GG</span>
+                            <h3>Recht auf Freiheit</h3>
+                            <p>Die Freiheit darf nur aufgrund von Gesetzen, Haftbefehlen oder akuter medizinischer Gefahr eingeschränkt werden.</p>
+                        </div>
+                        <div class="law-card-item">
+                            <span class="law-paragraph">§9 GG</span>
+                            <h3>Privatsphäre & Durchsuchung</h3>
+                            <p>Jeder hat das Recht auf Privatsphäre. Zivilpersonen dürfen keine anderen durchsuchen. Durchsuchungen sind Staatsorganen bei begründetem Verdacht vorbehalten.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab panel 2: Strafgesetzbuch -->
+                <div class="law-panel" id="panel-law-stgb">
+                    <h2>Auszug aus dem Strafgesetzbuch</h2>
+                    <div class="laws-list-container" id="stgb-list">
+                        
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 7 StGB</span>
+                                <h3>Notwehr</h3>
+                            </div>
+                            <p>Wer einen Verstoß begeht, der durch Notwehr geboten ist, handelt nicht rechtswidrig. Notwehr ist die Verteidigung, die erforderlich ist, um einen gegenwärtigen rechtswidrigen Angriff von sich, seinem Eigentum oder einer anderen Person abzuwenden. Die Notwehr muss verhältnismäßig sein und schnellstmöglich gemeldet werden.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 11 StGB</span>
+                                <h3>Diebstahl</h3>
+                            </div>
+                            <p>Wer einem anderen eine Sache entwendet, um sie sich anzueignen. Erhöhte Strafe bei gesichertem Schloss oder bei Staatseigentum. Der Versuch ist strafbar.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 12 StGB</span>
+                                <h3>Raub & Schwerer Raub</h3>
+                            </div>
+                            <p>Diebstahl unter Anwendung oder Androhung von Gewalt. Ein schwerer Raub liegt vor, wenn Menschenleben gefährdet, Personen verletzt oder als Geisel genommen werden.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 14 StGB</span>
+                                <h3>Beleidigung & Beamtenbeleidigung</h3>
+                            </div>
+                            <p>Wer einen anderen Menschen beleidigt. Die Beleidigung eines Beamten im Dienst gilt als besonders schwerer Fall.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 22 StGB</span>
+                                <h3>Widerstand gegen die Staatsgewalt</h3>
+                            </div>
+                            <p>Wer eine Anweisung eines Beamten missachtet, flieht, oder Gewalt gegen Beamte im Dienst anwendet, um eine Diensthandlung zu verhindern.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 25 StGB</span>
+                                <h3>Körperverletzung & Schwere Körperverletzung</h3>
+                            </div>
+                            <p>Körperliche Misshandlung oder Schädigung der Gesundheit. Ein schwerer Fall liegt vor, wenn das Opfer bewusstlos geschlagen wird.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 27 StGB</span>
+                                <h3>Geiselnahme</h3>
+                            </div>
+                            <p>Sich eines Menschen bemächtigen, um eine Handlung unter Gewaltandrohung zu erzwingen. Der Versuch ist strafbar.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 29 StGB</span>
+                                <h3>Mord</h3>
+                            </div>
+                            <p>Mörder ist, wer aus Mordlust, Habgier, niedrigen Beweggründen, heimtückisch oder grausam einen Menschen tötet. Wird mit maximaler Härte bestraft.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 33 StGB</span>
+                                <h3>Korruption & Bestechung</h3>
+                            </div>
+                            <p>Wer im Staatsdienst Geld-, Sach- oder Dienstleistungen zum eigenen Vorteil annimmt (Korruption) oder Staatsdienern solche anbietet (Bestechung).</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 41 StGB</span>
+                                <h3>Vermummungsverbot</h3>
+                            </div>
+                            <p>Jede Art der Gesichtsverschleierung in der Öffentlichkeit, die dazu geeignet ist, die Identität zu verbergen, ist verboten. (Ausnahme: LSPD/Bundeswehr im Spezialeinsatz mit codiertem Namen).</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 43 StGB</span>
+                                <h3>Sperrgebiete</h3>
+                            </div>
+                            <p>Unbefugtes Betreten oder Überfliegen von Sperrgebieten (JVA Innenraum, BKA-Gelände, Charity, nicht öffentliche Bereiche von BP & Justiz). Fahrzeuge auf Flugplätzen sind verboten.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab panel 3: Waffengesetz -->
+                <div class="law-panel" id="panel-law-waffg">
+                    <h2>Das Waffengesetz (WaffG)</h2>
+                    <div class="laws-list-container" id="waffg-list">
+                        
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 2 & § 4 WaffG</span>
+                                <h3>Lizenzen & Führen von Waffen</h3>
+                            </div>
+                            <p>Wer eine Waffe ohne erforderliche Lizenz führt, wird hart bestraft. Lizenzen können durch die Richterschaft entzogen werden. Das offene Tragen von Stich- oder Schusswaffen in Stadtgebieten oder auf öffentlichen Veranstaltungen ist verboten.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 7 WaffG</span>
+                                <h3>Waffenkategorien</h3>
+                            </div>
+                            <ul>
+                                <li><strong>Kategorie A (Sportgeräte/Werkzeuge):</strong> Erwerb lizenzfrei. Missbrauch bei Straftat stuft sie als illegale Waffe ein.</li>
+                                <li><strong>Kategorie B & C:</strong> Benötigen einen einfachen bzw. erweiterten Waffenschein.</li>
+                                <li><strong>Kategorie D (Illegale Waffen):</strong> Besitz, Führen und Handel sind verboten und werden strafrechtlich verfolgt. Dienstwaffen (Kampfpistole, Taser, vollautomatische Waffen) gelten für Zivilisten immer als Kategorie D!</li>
+                            </ul>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 10.1 & § 10.2 WaffG</span>
+                                <h3>Besitz illegaler Hand- & Langwaffen</h3>
+                            </div>
+                            <p>Besitz von Waffen der Kategorie D (z.B. Kriegswaffen, Sturmgewehre, illegale Pistolen) wird konsequent mit Freiheitsstrafen geahndet. Dienstwaffen sind nur im aktiven Dienst der Polizei gestattet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab panel 4: BtMG -->
+                <div class="law-panel" id="panel-law-btmg">
+                    <h2>Das Betäubungsmittelgesetz (BtMG)</h2>
+                    <div class="laws-list-container" id="btmg-list">
+                        
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 1 BtMG</span>
+                                <h3>Definition illegaler Betäubungsmittel</h3>
+                            </div>
+                            <p>Illegale Substanzen: <strong>Cannabis, Ecstasy, Lean, LSD, Meth, Opium, Cocaine, illegale Medikamente</strong>.</p>
+                            <p>Illegale Rohstoffe: Ammoniumnitrat, Carbon, Codein, Wasserstoff, flüssiger Schwefel, Salzsäure, roter Schwefel, Hormonpräparate, Natriumhydroxid etc.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 2 BtMG</span>
+                                <h3>Eigenbedarf</h3>
+                            </div>
+                            <p>Als geringe, straffreie Menge für den Eigenbedarf gilt ausschließlich:</p>
+                            <ul>
+                                <li><strong>Cannabis: bis 5 Gramm</strong></li>
+                            </ul>
+                            <p>Sobald diese Grenze überschritten wird, entfällt der Eigenbedarf und es liegt ein Verstoß gegen das BtMG vor.</p>
+                        </div>
+
+                        <div class="law-list-card">
+                            <div class="llc-header">
+                                <span class="law-paragraph">§ 3 & § 4 BtMG</span>
+                                <h3>Anbau, Herstellung & Handel</h3>
+                            </div>
+                            <p>Der illegale Anbau, die Ernte, die chemische Synthese/Herstellung sowie der gewerbsmäßige Vertrieb und die Weitergabe von Betäubungsmitteln oder deren Rohstoffen ist eine schwere Straftat und zieht hohe Freiheitsstrafen nach sich.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PAGE: IMPRESSUM ================= -->
+        <section class="page" id="page-impressum">
+            <div class="section-header">
+                <span class="section-badge">Rechtliches</span>
+                <h1>Impressum & Kontakt</h1>
+                <p>Informationen gemäß § 5 TMG und rechtliche Hinweise zum Projekt OnLifeRP.</p>
+            </div>
+
+            <div class="impressum-wrapper">
+                <!-- Contact & General -->
+                <div class="im-card">
+                    <h2><i class="fa-solid fa-circle-info text-accent"></i> Allgemeine Angaben</h2>
+                    <p><strong>Verantwortlich für den Inhalt dieser Webseite:</strong><br>Onlife Roleplay</p>
+                    <p>Dies ist ein rein privates, nicht kommerzielles Freizeitprojekt, das ausschließlich der Unterhaltung und der Gestaltung eines GTA 5 Online-Rollenspiel-Servers dient.</p>
+                    
+                    <h3>Kontaktmöglichkeiten:</h3>
+                    <p><i class="fa-brands fa-discord"></i> <strong>Discord:</strong> Tritt unserem Server bei und öffne dort ein Support-Ticket.</p>
+                    <p><i class="fa-solid fa-envelope"></i> <strong>E-Mail:</strong> <a href="mailto:onliferp@web.de" class="text-link">onliferp@web.de</a></p>
+                    
+                    <div class="info-alert">
+                        <strong>Hinweis zur Anschrift:</strong>
+                        <p>Da es sich bei Onlife Roleplay um ein rein privates und nicht auf Gewinnerzielung ausgerichtetes Freizeitprojekt handelt, besteht gemäß § 5 TMG keine Pflicht zur Angabe einer vollständigen Anschrift. Eine Kontaktaufnahme ist über die genannten digitalen Wege jederzeit möglich.</p>
+                    </div>
+                </div>
+
+                <!-- Kleinunternehmer & Spenden -->
+                <div class="im-card">
+                    <h2><i class="fa-solid fa-hand-holding-dollar text-accent"></i> Kleinunternehmer & Spenden</h2>
+                    <h3>Kleinunternehmerregelung (§ 19 UStG)</h3>
+                    <p>Onlife Roleplay wird als reines Freizeitprojekt von Privatpersonen betrieben. Es besteht keinerlei Gewinnerzielungsabsicht, und es werden keine Einnahmen durch Spenden, Mitgliedsbeiträge, Werbung oder andere kommerzielle Mittel generiert. Da wir privat und ohne Umsatz handeln, fallen wir unter die Kleinunternehmerregelung und benötigen keine Umsatzsteuer-Identifikationsnummer.</p>
+                    
+                    <h3>Spenden & Serverfinanzierung</h3>
+                    <p>Es erfolgen keine direkten finanziellen Zuwendungen an uns als Betreiber. Sämtliche Spenden zur Erhaltung der Serverinfrastruktur werden <strong>direkt an den externen Hostinganbieter <a href="https://avoro.eu/de" target="_blank" class="text-link">Avoro.eu</a> geleistet</strong>. Die Spenden dienen ausschließlich der Deckung der monatlichen Servermiete. Wir haben keinen Zugriff auf diese Gelder und erzielen keinerlei Gewinne.</p>
+                </div>
+
+                <!-- Liability -->
+                <div class="im-card width-full">
+                    <h2><i class="fa-solid fa-scale-unbalanced-flip text-accent"></i> Haftungsausschluss</h2>
+                    <h3>Haftung für Inhalte</h3>
+                    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+                    
+                    <h3>Haftung für Links</h3>
+                    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                </div>
+
+                <!-- Social Media -->
+                <div class="im-card width-full socials-card">
+                    <h2>Unsere Social-Media Kanäle</h2>
+                    <div class="socials-grid">
+                        <a href="https://www.instagram.com/onlife_rp_official/" target="_blank" class="social-item instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@onlife.roleplay" target="_blank" class="social-item tiktok">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="https://www.youtube.com/@onliferp1687" target="_blank" class="social-item youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="social-item discord">
+                            <i class="fa-brands fa-discord"></i>
+                            <span>Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: GALERIE ================= -->
+        <section class="page" id="page-galerie">
+            <div class="section-header">
+                <span class="section-badge">Impressionen</span>
+                <h1>Unsere Bildergalerie</h1>
+                <p>Erlebe die coolsten Momente, Fahrzeuge und Fraktionen direkt aus unserem Los Santos.</p>
+            </div>
+
+            <div class="gallery-wrapper">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox('galerie/screenshot1.png', 'Luxussportwagen in Los Santos')">
+                        <img src="galerie/screenshot1.png" alt="Luxussportwagen in Los Santos">
+                        <div class="gallery-overlay">
+                            <span>Luxussportwagen in Los Santos</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('galerie/screenshot2.png', 'LSPD Streife im Sonnenuntergang')">
+                        <img src="galerie/screenshot2.png" alt="LSPD Streife im Sonnenuntergang">
+                        <div class="gallery-overlay">
+                            <span>LSPD Streife im Sonnenuntergang</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('galerie/screenshot3.png', 'Gemeinschaft & Crew Treffen')">
+                        <img src="galerie/screenshot3.png" alt="Gemeinschaft & Crew Treffen">
+                        <div class="gallery-overlay">
+                            <span>Gemeinschaft & Crew Treffen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-tip">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <p><strong>So fügst du neue Bilder hinzu:</strong> Um ein neues Bild einzufügen, lade es einfach in den Ordner <code>galerie/</code> hoch und dupliziere eine der obigen Boxen im HTML-Code der <code>index.html</code> mit dem neuen Bildnamen!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 OnLifeRP. Alle Rechte vorbehalten. Privatprojekt ohne kommerzielle Absichten.</p>
+            <p>Erstellt mit <i class="fa-solid fa-heart heart-pulse"></i> für die OnLife Community — Gehostet auf GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery Fullscreen Preview -->
+    <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" onclick="event.stopPropagation()">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
