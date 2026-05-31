@@ -1623,3 +1623,139 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   PAGE: CHANGELOGS (TIMELINE)
+   ========================================================================== */
+.changelog-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    padding-left: 30px;
+}
+
+.changelog-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary) 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+.changelog-entry {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.changelog-entry:last-child {
+    margin-bottom: 0;
+}
+
+.changelog-dot {
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    z-index: 2;
+}
+
+.changelog-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.changelog-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.03);
+}
+
+.changelog-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.changelog-version {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.changelog-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.changelog-section {
+    margin-bottom: 20px;
+}
+
+.changelog-section:last-child {
+    margin-bottom: 0;
+}
+
+.changelog-section-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.changelog-section-title.new { color: #10b981; }      /* Green for Neu */
+.changelog-section-title.fix { color: #3b82f6; }      /* Blue for Behoben */
+.changelog-section-title.change { color: #f59e0b; }   /* Yellow for Geändert */
+
+.changelog-list {
+    list-style: none;
+}
+
+.changelog-list li {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+.changelog-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.changelog-section-title.new + .changelog-list li::before { color: #10b981; }
+.changelog-section-title.fix + .changelog-list li::before { color: #3b82f6; }
+.changelog-section-title.change + .changelog-list li::before { color: #f59e0b; }

@@ -36,6 +36,7 @@
                 <button class="nav-btn" id="btn-regeln" onclick="switchPage('regeln')"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
                 <button class="nav-btn" id="btn-gesetze" onclick="switchPage('gesetze')"><i class="fa-solid fa-book-scale"></i> Gesetze</button>
                 <button class="nav-btn" id="btn-galerie" onclick="switchPage('galerie')"><i class="fa-solid fa-images"></i> Galerie</button>
+                <button class="nav-btn" id="btn-changelogs" onclick="switchPage('changelogs')"><i class="fa-solid fa-clock-rotate-left"></i> Changelogs</button>
                 <button class="nav-btn" id="btn-impressum" onclick="switchPage('impressum')"><i class="fa-solid fa-scale-balanced"></i> Impressum</button>
             </nav>
 
@@ -57,6 +58,7 @@
         <button class="mobile-nav-btn" id="m-btn-regeln" onclick="switchPage('regeln'); toggleMobileMenu()"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
         <button class="mobile-nav-btn" id="m-btn-gesetze" onclick="switchPage('gesetze'); toggleMobileMenu()"><i class="fa-solid fa-book-scale"></i> Gesetze</button>
         <button class="mobile-nav-btn" id="m-btn-galerie" onclick="switchPage('galerie'); toggleMobileMenu()"><i class="fa-solid fa-images"></i> Galerie</button>
+        <button class="mobile-nav-btn" id="m-btn-changelogs" onclick="switchPage('changelogs'); toggleMobileMenu()"><i class="fa-solid fa-clock-rotate-left"></i> Changelogs</button>
         <button class="mobile-nav-btn" id="m-btn-impressum" onclick="switchPage('impressum'); toggleMobileMenu()"><i class="fa-solid fa-scale-balanced"></i> Impressum</button>
         <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="mobile-discord-cta">
             <i class="fa-brands fa-discord"></i> Discord beitreten
@@ -920,6 +922,163 @@
                         <img src="galerie/18.jpg" alt="OnLife RP — Impression 18">
                         <div class="gallery-overlay">
                             <span>OnLife RP — Impression 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Changelogs Page -->
+        <section class="page" id="page-changelogs">
+            <div class="section-header">
+                <span class="section-badge">Updates & patches</span>
+                <h1>Server Changelogs</h1>
+                <p>Bleibe immer auf dem neuesten Stand über unsere Server-Updates, neue Features und Fehlerbehebungen.</p>
+            </div>
+
+            <div class="changelog-timeline">
+                <!-- Update 1.1.0 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-card">
+                        <div class="changelog-header-info">
+                            <span class="changelog-version"><i class="fa-solid fa-rocket text-accent"></i> Update v1.1.0 — Web-Release & responsive SPA-Design</span>
+                            <span class="changelog-date">30. Mai 2026</span>
+                        </div>
+                        
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                            <ul class="changelog-list">
+                                <li>Veröffentlichung der brandneuen OnLifeRP Webseite gehostet über GitHub Pages!</li>
+                                <li>Vollständig filterbare Live-Suche für das Regelwerk und das komplette Gesetzbuch (StGB, GG, WaffenG, BtMG) integriert.</li>
+                                <li>Saubere Bildergalerie mit 18 Ingame-Impressionen inklusive Lightbox-Vollbildvorschau und durchnummerierten Bildern.</li>
+                                <li>Neuen Bereich "Changelogs" als interaktive SPA-Timeline für alle kommenden Updates eingebunden.</li>
+                            </ul>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                            <ul class="changelog-list">
+                                <li>Entwickler-Anleitungen aus der Galerie entfernt, um ein absolut sauberes Besuchererlebnis zu garantieren.</li>
+                                <li>Navigation und Layout vollständig responsiv für mobile Endgeräte (Smartphones & Tablets) optimiert.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 1.0.5 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-card">
+                        <div class="changelog-header-info">
+                            <span class="changelog-version"><i class="fa-solid fa-code text-accent"></i> Update v1.0.5 — Server-Optimierungen & Admin-Tools</span>
+                            <span class="changelog-date">29. Mai 2026</span>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                            <ul class="changelog-list">
+                                <li>Einführung des neuen `ol_cleaner` Tablet-Wiper-Systems für eine saubere Spieler-Datenbankbereinigung inklusive detailliertem README.</li>
+                            </ul>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                            <ul class="changelog-list">
+                                <li>Server-Core (`ol_base` & `ol_core`) Performance-Optimierungen zur Reduzierung von Latenzzeiten und Sync-Lags durchgeführt.</li>
+                            </ul>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                            <ul class="changelog-list">
+                                <li>Fehlerhafte Fahrstuhlelemente (`ol_elevator`) repariert und Absturzursachen vollständig behoben.</li>
+                                <li>Fehler beim Fahrzeug-Spawning korrigiert, bei dem Fahrzeuge in der Luft schwebten oder im Boden versanken.</li>
+                                <li>Probleme beim Respawn-Verhalten von Fraktionsfahrzeugen gelöst.</li>
+                                <li>Verschiedene UI-Debug-Elemente aus den aktiven Spieler-Interfaces entfernt.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 1.0.0 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-card">
+                        <div class="changelog-header-info">
+                            <span class="changelog-version"><i class="fa-solid fa-briefcase text-accent"></i> Update v1.0.0 — Neue Berufe & Wirtschaftsreform</span>
+                            <span class="changelog-date">20. Mai 2026</span>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                            <ul class="changelog-list">
+                                <li>Einführung des Postboten-Nebenjobs (`ol_postjob`) mit eigenem Routensystem.</li>
+                                <li>Neues Mülltonnen-Such-System (`ol_muelltonnen`) freigeschaltet – finde nützliche Gegenstände im Müll.</li>
+                                <li>Helikopter-Tuning-Script (`ol_helituning`) hinzugefügt für optische Upgrades an Helikoptern.</li>
+                                <li>Sound-Swap-System (`ol_motorsoundswap`) für individuelle Motorsounds bei Sportwagen.</li>
+                                <li>Drift-Zähler (`ol_driftcounter`) für Highscore-Rekorde beim Driften eingebaut.</li>
+                                <li>Supportshop-System (`ol_supportshop`) zur Unterstützung des Servers eingerichtet.</li>
+                                <li>Autofriedhof & Verschrottung (`ol_verschrottung`) für das Zerstören unbrauchbarer Fahrzeuge integriert.</li>
+                            </ul>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                            <ul class="changelog-list">
+                                <li>Wirtschaftsreforms-Update: Neues Steuersystem (`ol_taxes`) für realistischere Abgaben berechnet.</li>
+                                <li>Gebrauchtwagenmarkt (`ol_gebrauchtwagenverkauf`) komplett überarbeitet, um Peer-to-Peer Autohandel zu ermöglichen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 0.9.0 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-card">
+                        <div class="changelog-header-info">
+                            <span class="changelog-version"><i class="fa-solid fa-gamepad text-accent"></i> Update v0.9.0 — Zivile Aktivitäten & Event-Specials</span>
+                            <span class="changelog-date">10. Mai 2026</span>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                            <ul class="changelog-list">
+                                <li>Gym-Trainingssystem (`ol_gym`) für körperliche Fitness deiner Spielcharaktere hinzugefügt.</li>
+                                <li>Metalldetektor-Suche (`ol_metalldetektor`) und funktionierende Haarrasierer (`ol_rasierer`) für Friseure.</li>
+                                <li>Special-Event: Eintägiges, spektakuläres Hochwasser-Spaß-Event (`ol_hochwasser`) durchgeführt! 🌊</li>
+                                <li>Sicherheits-Schutzbereiche (`ol_guardzones`) und das Ringteleport-System (`ol_ringteleport`) hinzugefügt.</li>
+                            </ul>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                            <ul class="changelog-list">
+                                <li>Fehler im FFA-Arena-Skript (`ffa`) erfolgreich behoben für reibungslose Trainingskämpfe.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 0.8.0 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-card">
+                        <div class="changelog-header-info">
+                            <span class="changelog-version"><i class="fa-solid fa-shield-halved text-accent"></i> Update v0.8.0 — Staatsfraktionen & Infrastruktur</span>
+                            <span class="changelog-date">25. April 2026</span>
+                        </div>
+
+                        <div class="changelog-section">
+                            <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                            <ul class="changelog-list">
+                                <li>Erweiterung der LSPD-Polizeiakten (`ol_police`) und des medizinischen LSMD-Behandlungssystems (`ol_doctor`).</li>
+                                <li>Polizei-Geschwindigkeitsradare (`xRadar`) zur Verkehrsüberwachung an Unfallschwerpunkten aufgestellt.</li>
+                                <li>Stadtwerke-Job (`ol_stadtwerke`) als neuer legaler Wartungs- und Reparaturberuf eingeführt.</li>
+                                <li>Parkverbots-Zonen und Abschleppdienst-Skript (`ol_parkverbot`) zur Beseitigung von Falschparkern.</li>
+                                <li>Fahrzeug-Mietstationen (`ol_rent`) für neue Bürger direkt am Flughafen platziert.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
