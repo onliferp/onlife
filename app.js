@@ -292,3 +292,47 @@ document.addEventListener('keydown', (e) => {
         closeLightbox();
     }
 });
+
+// Toggle Changelog Accordion Card
+function toggleChangelog(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    
+    // Toggle active state
+    card.classList.toggle('open');
+}
+
+// Background Music Playback Logic
+function toggleMusic() {
+    const audio = document.getElementById('bg-audio');
+    const visualizer = document.getElementById('musicVisualizer');
+    const statusText = document.getElementById('musicStatus');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    
+    if (!audio) return;
+    
+    if (audio.paused) {
+        // Play audio
+        audio.play().then(() => {
+            visualizer.classList.add('animating');
+            statusText.textContent = 'Aktiv';
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        }).catch(err => {
+            console.log('Autoplay was blocked or audio failed to load: ', err);
+        });
+    } else {
+        // Pause audio
+        audio.pause();
+        visualizer.classList.remove('animating');
+        statusText.textContent = 'Aus';
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    }
+}
+
+// Set pleasant background music volume on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-audio');
+    if (audio) {
+        audio.volume = 0.25; // Quiet, perfect ambient background level
+    }
+});

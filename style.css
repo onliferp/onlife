@@ -154,6 +154,7 @@ body {
     font-weight: 800;
     letter-spacing: -0.5px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .logo-accent {
@@ -169,7 +170,9 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 8px;
+    gap: 2px;
+    margin: 0 10px;
+    flex-wrap: nowrap;
 }
 
 .nav-btn {
@@ -177,19 +180,21 @@ body {
     border: none;
     color: var(--text-muted);
     font-family: var(--font-heading);
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 600;
-    padding: 10px 16px;
+    padding: 6px 10px;
     border-radius: 20px;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-btn i {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .nav-btn:hover {
@@ -209,16 +214,18 @@ body {
     background: #5865F2;
     color: #fff;
     text-decoration: none;
-    padding: 11px 20px;
-    border-radius: 22px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13.5px;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 20px rgba(88, 101, 242, 0.3);
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.2);
     transition: var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .discord-cta:hover {
@@ -1379,7 +1386,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     .nav-links, .discord-cta {
         display: none;
     }
@@ -1387,7 +1394,9 @@ body {
     .mobile-toggle {
         display: block;
     }
-    
+}
+
+@media (max-width: 768px) {
     .hero-title {
         font-size: 38px;
     }
@@ -1625,70 +1634,91 @@ body {
 }
 
 /* ==========================================================================
-   PAGE: CHANGELOGS (TIMELINE)
+   PAGE: CHANGELOGS (TIMELINE ACCORDION)
    ========================================================================== */
 .changelog-timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto 0 auto;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
+/* Glowing Neon Vertical Line */
 .changelog-timeline::before {
     content: '';
     position: absolute;
     left: 8px;
-    top: 5px;
-    bottom: 5px;
+    top: 25px;
+    bottom: 25px;
     width: 2px;
-    background: linear-gradient(180deg, var(--primary) 0%, rgba(239, 68, 68, 0.05) 100%);
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 50%, rgba(239, 68, 68, 0.05) 100%);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
 }
 
 .changelog-entry {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .changelog-entry:last-child {
     margin-bottom: 0;
 }
 
+/* Glowing Indicator Dot */
 .changelog-dot {
     position: absolute;
-    left: -30px;
-    top: 6px;
-    width: 18px;
-    height: 18px;
+    left: -41px;
+    top: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--bg-main);
     border: 3px solid var(--primary);
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
     z-index: 2;
+    transition: var(--transition);
 }
 
-.changelog-card {
+.changelog-entry:hover .changelog-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px var(--primary);
+    background: var(--primary);
+}
+
+/* Premium Accordion Card */
+.changelog-accordion {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: 30px;
+    overflow: hidden;
+    cursor: pointer;
     transition: var(--transition);
 }
 
-.changelog-card:hover {
+.changelog-accordion:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.03);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.04);
 }
 
-.changelog-header-info {
+/* Accordion Header */
+.changelog-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 24px 30px;
+    user-select: none;
+    transition: var(--transition);
+}
+
+.changelog-card-header:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.changelog-title-area {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .changelog-version {
@@ -1701,18 +1731,74 @@ body {
     gap: 10px;
 }
 
+.changelog-version i {
+    color: var(--primary);
+    filter: drop-shadow(0 0 5px var(--primary-glow));
+}
+
+.changelog-subtitle {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.changelog-meta-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .changelog-date {
     font-size: 13px;
     color: var(--text-muted);
     font-weight: 600;
     background: rgba(255, 255, 255, 0.03);
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.changelog-arrow {
+    color: var(--text-dark);
+    font-size: 16px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accordion Content Collapse */
+.changelog-card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.changelog-card-content-inner {
+    padding: 0 30px 30px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 24px;
+}
+
+/* Open State classes */
+.changelog-accordion.open {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 40px rgba(239, 68, 68, 0.08);
+}
+
+.changelog-accordion.open .changelog-card-content {
+    max-height: 1000px;
+}
+
+.changelog-accordion.open .changelog-arrow {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+
+.changelog-accordion.open .changelog-card-header {
+    background: rgba(239, 68, 68, 0.02);
+}
+
+/* Styled Section Badges inside Cards */
 .changelog-section {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .changelog-section:last-child {
@@ -1722,40 +1808,270 @@ body {
 .changelog-section-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 14px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
 }
 
-.changelog-section-title.new { color: #10b981; }      /* Green for Neu */
-.changelog-section-title.fix { color: #3b82f6; }      /* Blue for Behoben */
-.changelog-section-title.change { color: #f59e0b; }   /* Yellow for Geändert */
+.changelog-section-title.new {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+}
 
+.changelog-section-title.fix {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.changelog-section-title.change {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+/* Premium List Items with custom left-border glow and hover */
 .changelog-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .changelog-list li {
-    font-size: 14.5px;
+    font-size: 14px;
     color: var(--text-muted);
-    margin-bottom: 8px;
     position: relative;
-    padding-left: 20px;
+    padding: 12px 18px 12px 42px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
     line-height: 1.5;
+    transition: var(--transition);
 }
 
+.changelog-list li:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+    transform: translateX(3px);
+}
+
+/* FontAwesome bullet icons */
 .changelog-list li::before {
-    content: "•";
     position: absolute;
-    left: 0;
-    font-size: 16px;
-    line-height: 1;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 12px;
 }
 
-.changelog-section-title.new + .changelog-list li::before { color: #10b981; }
-.changelog-section-title.fix + .changelog-list li::before { color: #3b82f6; }
-.changelog-section-title.change + .changelog-list li::before { color: #f59e0b; }
+.changelog-section-title.new + .changelog-list li::before {
+    content: "\f067"; /* plus */
+    color: #10b981;
+}
+
+.changelog-section-title.fix + .changelog-list li::before {
+    content: "\f00c"; /* check */
+    color: #3b82f6;
+}
+
+.changelog-section-title.change + .changelog-list li::before {
+    content: "\f013"; /* gear */
+    color: #f59e0b;
+}
+
+.changelog-section-title.new + .changelog-list li {
+    border-left: 3px solid #10b981;
+}
+.changelog-section-title.fix + .changelog-list li {
+    border-left: 3px solid #3b82f6;
+}
+.changelog-section-title.change + .changelog-list li {
+    border-left: 3px solid #f59e0b;
+}
+
+/* Responsive Rules for Timeline & Accordion */
+@media (max-width: 768px) {
+    .changelog-timeline {
+        padding-left: 24px;
+    }
+    
+    .changelog-timeline::before {
+        left: 3px;
+        top: 20px;
+        bottom: 20px;
+    }
+    
+    .changelog-dot {
+        left: -28px;
+        top: 23px;
+        width: 14px;
+        height: 14px;
+        border-width: 2.5px;
+    }
+    
+    .changelog-card-header {
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .changelog-meta-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .changelog-version {
+        font-size: 18px;
+    }
+    
+    .changelog-card-content-inner {
+        padding: 0 20px 20px 20px;
+    }
+    
+    .changelog-list li {
+        font-size: 13.5px;
+        padding: 10px 14px 10px 36px;
+    }
+    
+    .changelog-list li::before {
+        left: 12px;
+    }
+}
+
+/* ==========================================================================
+   PREMIUM BACKGROUND MUSIC CONTROLLER PILL
+   ========================================================================== */
+.music-controller {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    background: rgba(6, 9, 19, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 3px solid var(--primary);
+    padding: 10px 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(239, 68, 68, 0.05);
+    transition: var(--transition);
+    user-select: none;
+}
+
+.music-controller:hover {
+    transform: translateY(-3px);
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 68, 68, 0.15);
+}
+
+/* Audio Visualizer Bars */
+.music-visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+    width: 21px;
+}
+
+.music-visualizer .bar {
+    width: 3px;
+    height: 4px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+/* visualizer animation */
+.music-visualizer.animating .bar {
+    background-color: var(--primary);
+    animation: barBounce 1.2s ease-in-out infinite alternate;
+}
+
+.music-visualizer.animating .bar-1 { animation-delay: 0.1s; height: 16px; }
+.music-visualizer.animating .bar-2 { animation-delay: 0.4s; height: 12px; }
+.music-visualizer.animating .bar-3 { animation-delay: 0.2s; height: 15px; }
+.music-visualizer.animating .bar-4 { animation-delay: 0.6s; height: 8px; }
+
+@keyframes barBounce {
+    0% { height: 4px; transform: scaleY(1); }
+    100% { height: 16px; transform: scaleY(1.2); }
+}
+
+/* Music Details Info */
+.music-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.music-title {
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.music-status {
+    font-size: 10.5px;
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.music-visualizer.animating + .music-details .music-status {
+    color: #10b981; /* Green status when active */
+}
+
+/* Play/Pause Button */
+.music-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.music-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.music-btn i {
+    font-size: 11px;
+    margin-left: 1px;
+}
+
+/* responsive music controller for mobile viewports */
+@media (max-width: 768px) {
+    .music-controller {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 14px;
+        gap: 10px;
+    }
+}
