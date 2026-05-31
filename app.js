@@ -336,3 +336,98 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.volume = 0.25; // Quiet, perfect ambient background level
     }
 });
+
+/* ==========================================================================
+   TASTENBELEGUNG — Interactive Keyboard Tooltip & Filter Logic
+   ========================================================================== */
+
+(function initKeyboard() {
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const tooltip    = document.getElementById('kbTooltip');
+        const tipKey     = document.getElementById('kbTooltipKey');
+        const tipAction  = document.getElementById('kbTooltipAction');
+        const tipCat     = document.getElementById('kbTooltipCat');
+        const tipIcon    = document.getElementById('kbTooltipIcon');
+
+        if (!tooltip) return;
+
+        const catLabels = {
+            system:        'System',
+            interaktion:   'Interaktion',
+            bewegung:      'Bewegung',
+            fahrzeug:      'Fahrzeug',
+            kommunikation: 'Kommunikation',
+        };
+
+        // Attach hover events to all keys with an action
+        document.querySelectorAll('.kb-key.kb-bound').forEach(key => {
+            key.addEventListener('mouseenter', (e) => {
+                const action = key.dataset.action;
+                const cat    = key.dataset.cat;
+                const icon   = key.dataset.icon || 'fa-keyboard';
+                const label  = key.dataset.key;
+
+                if (!action) return;
+
+                tipKey.textContent    = label;
+                tipAction.textContent = action;
+                tipIcon.className     = `fa-solid ${icon}`;
+
+                tipCat.textContent  = catLabels[cat] || cat;
+                tipCat.className    = `kbt-cat ${cat}`;
+
+                positionTooltip(e);
+                tooltip.classList.add('show');
+            });
+
+            key.addEventListener('mousemove', positionTooltip);
+
+            key.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('show');
+            });
+        });
+
+        function positionTooltip(e) {
+            const offset = 18;
+            let x = e.clientX + offset;
+            let y = e.clientY + offset;
+
+            // Keep tooltip inside viewport
+            const tw = tooltip.offsetWidth  || 220;
+            const th = tooltip.offsetHeight || 80;
+            if (x + tw > window.innerWidth)  x = e.clientX - tw - offset;
+            if (y + th > window.innerHeight) y = e.clientY - th - offset;
+
+            tooltip.style.left = x + 'px';
+            tooltip.style.top  = y + 'px';
+        }
+    });
+})();
+
+// Category filter for keyboard keys
+function filterKeys(cat) {
+    // Update active filter button
+    document.querySelectorAll('.kb-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeBtn = document.getElementById('kf-' + cat);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Apply dimming to keys
+    document.querySelectorAll('.kb-key').forEach(key => {
+        if (cat === 'all') {
+            key.classList.remove('kb-dimmed');
+        } else {
+            const keyCat = key.dataset.cat;
+            if (keyCat === cat) {
+                key.classList.remove('kb-dimmed');
+            } else if (key.classList.contains('kb-bound')) {
+                key.classList.add('kb-dimmed');
+            } else {
+                // unbound keys: always slightly dimmed, but more so on filter
+                key.classList.add('kb-dimmed');
+            }
+        }
+    });
+}
