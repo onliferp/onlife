@@ -12,7 +12,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -999,10 +999,60 @@
             </div>
 
             <div class="changelog-timeline">
+                <!-- Update 1.2.0 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v120">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v120')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-wrench"></i> Update v1.2.0</span>
+                                <span class="changelog-subtitle">Tuning-System-Refactor, Job-Updates & Bugfixes</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">04. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Tuning-System:</strong> Neue optionale "Freie Kamera" im Werkstatt-Interface für eine optimale Rundum-Vorschau integriert.</li>
+                                        <li><strong>Tuning-System:</strong> Modernisiertes UI-Theme im "Red & Black" Design (inkl. schicken diagonalen Farbverläufen).</li>
+                                        <li><strong>Tuning-System:</strong> Motorradfelgen sind ab sofort ebenfalls tunbar.</li>
+                                        <li><strong>Zivilisten-Nebenjobs:</strong> Schwebende 3D Wegpunkt-Marker für den Mähdrescher- (Mower) und Zeitungsjungen-Job (Paperboy) zur besseren Orientierung implementiert.</li>
+                                        <li><strong>Multicharacter UI:</strong> CEF-Browsererkennung mit automatischem Mock-Testmodus integriert – ermöglicht UI-Tests direkt im normalen Browser.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Abschlepp-Job:</strong> NPCs verhalten sich beim Abschleppen nun realistisch (verbleiben im Auto oder steigen geordnet aus).</li>
+                                        <li><strong>Ladebildschirm:</strong> Externe Verlinkungen öffnen sich ab sofort komfortabel direkt im Systembrowser des Spielers via `invokeNative('openUrl')`.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Tuning-System:</strong> Fehler in der Preisberechnung behoben – Felgenpreise addieren sich beim Durchscrollen nicht mehr fälschlicherweise auf.</li>
+                                        <li><strong>Tuning-System:</strong> Kritische Abstürze (Script-Freeze/Abstürze) bei der Reifenmodifikation von Motorrädern behoben.</li>
+                                        <li><strong>Audio-Ressourcen:</strong> Schwerer Client-Crash (Exception c0000005) durch fehlerhafte Spuren in `ol-lorevehicles` (`bm3g80valvetronic_game.dat`) gefixt.</li>
+                                        <li><strong>Fensterputzer-Job:</strong> Spawning-Fehler behoben und Endlosschleifen der Modell-Abfrage (`HashGrabber`) durch standardisierte Utility-Modelle (Speedo) und Timeouts gelöst.</li>
+                                        <li><strong>Shops Creator:</strong> Fehlende Label-Warnungen (`ESX.GetItemLabel returned nil`) durch einen case-insensitiven Übersetzungslayer zwischen jaksam- und ox-inventory behoben.</li>
+                                        <li><strong>Ladebildschirm:</strong> Visuelles weißes Flackern der Wellen-Animationen behoben und Fensterlichter-Ausrichtung an der Skyline-Silhouette korrigiert.</li>
+                                        <li><strong>Zivilisten-Nebenjobs:</strong> Ungenaue Boss-NPC-Spawnkoordinaten korrigiert und Hänger bei der Routen-Fortführung behoben.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update 1.1.0 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v110">
+                    <div class="changelog-accordion" id="changelog-v110">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v110')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-rocket"></i> Update v1.1.0</span>

@@ -1784,7 +1784,7 @@ body {
 }
 
 .changelog-accordion.open .changelog-card-content {
-    max-height: 1000px;
+    max-height: 2500px;
 }
 
 .changelog-accordion.open .changelog-arrow {
