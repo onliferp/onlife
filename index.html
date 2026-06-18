@@ -83,22 +83,22 @@
                         <button onclick="switchPage('grundlagen')" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Grundlagen lesen</button>
                     </div>
                 </div>
+                <!-- WM 2026 Hero Card (rechts) -->
                 <div class="hero-visual">
-                    <div class="visual-gta-card">
-                        <div class="card-bar">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="bar-title">onlife_rp_connect.json</span>
+                    <div class="wm-hero-card">
+                        <div class="wm-hero-card-top">
+                            <span class="wm-hc-live"><span class="wm-live-dot"></span> LIVE</span>
+                            <span class="wm-hc-title">WM 2026 · Tipico</span>
                         </div>
-                        <div class="card-code">
-                            <pre><code>{
-  <span class="k">"serverName"</span>: <span class="s">"OnLife RP"</span>,
-  <span class="k">"plattform"</span>: <span class="s">"FiveM"</span>,
-  <span class="k">"voice"</span>: <span class="s">"PMA Voice (Ingame)"</span>,
-  <span class="k">"status"</span>: <span class="s">"Online"</span>,
-  <span class="k">"community"</span>: <span class="s">"Mit Herz & Erfahrung"</span>
-}</code></pre>
+                        <div class="wm-hc-body">
+                            <div class="wm-hc-icon"><i class="fa-solid fa-futbol"></i></div>
+                            <div class="wm-hc-heading">Tippe auf echte<br>WM-Matches!</div>
+                            <p class="wm-hc-desc">Nutze unser <strong>Ingame-Tipico-System</strong> und wette auf echte WM 2026 Spiele — direkt auf dem Server.</p>
+                            <div class="wm-hc-steps">
+                                <div class="wm-hc-step"><span>1</span> Server joinen</div>
+                                <div class="wm-hc-step"><span>2</span> Auf Match tippen</div>
+                                <div class="wm-hc-step wm-hc-step-gold"><span>💰</span> Geld gewinnen</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,6 +128,52 @@
                         <p>Bei uns steht die Community im Mittelpunkt. Jede Idee, jede Stimme und jedes Mitglied findet Gehör.</p>
                     </div>
                 </div>
+
+                <!-- Creator Code Banner — Bold Edition -->
+                <div class="cc-banner">
+                    <!-- Limited time pulse -->
+                    <div class="cc-banner-top">
+                        <span class="cc-limited"><span class="cc-pulse-dot"></span> NUR FÜR KURZE ZEIT!</span>
+                        <span class="cc-howto"><i class="fa-solid fa-terminal"></i> Beim ersten Join <strong>/cc</strong> im Chat eingeben</span>
+                    </div>
+
+                    <div class="cc-banner-main">
+                        <!-- Left: Big text -->
+                        <div class="cc-banner-left">
+                            <div class="cc-big-label">CREATOR CODE</div>
+                            <div class="cc-big-code">onlife</div>
+                            <div class="cc-big-reward">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                                <span>1.000.000 $ <em>for free</em></span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Copy box -->
+                        <div class="cc-banner-right">
+                            <p class="cc-instruction">Code kopieren &amp; beim Join eingeben:</p>
+                            <div class="cc-copy-display">
+                                <span class="cc-copy-code" id="creatorCodeText">onlife</span>
+                                <button class="cc-copy-btn" id="copyCodeBtn" onclick="copyCreatorCode()">
+                                    <i class="fa-solid fa-copy" id="copyIcon"></i>
+                                    <span id="copyBtnText">Kopieren</span>
+                                </button>
+                            </div>
+                            <div class="cc-steps-row">
+                                <span class="cc-mini-step"><span>1</span> Server joinen</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <span class="cc-mini-step"><span>2</span> <kbd>/cc</kbd> tippen</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <span class="cc-mini-step cc-mini-gold"><span>💰</span> 1 Mille!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Background decoration -->
+                    <div class="cc-banner-bg-deco">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
 
                 <div class="welcome-box">
                     <p><strong>Onlife ist keine schnelle Idee – sondern ein langfristiges Projekt mit Substanz. Wenn du Teil davon werden willst, bist du jederzeit herzlich willkommen!</strong></p>
@@ -1000,6 +1046,126 @@
             </div>
 
             <div class="changelog-timeline">
+
+                <!-- Bugfix 17. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-b1706">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-b1706')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bug"></i> Bugfix</span>
+                                <span class="changelog-subtitle">Tipico Match-Auswertung & Server-Stabilität</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">17. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Tipico Ticker-Updater:</strong> Kritischen Fehler behoben, der dazu führte dass Match-Ergebnisse nicht in die Datenbank geschrieben wurden – Matches wurden nicht automatisch ausgewertet.</li>
+                                        <li><strong>Match-Auswertung:</strong> Datum-Parsing-Crash im Lua-Script behoben, der die Auszahlungen und Status-Updates nach Spielende verhinderte.</li>
+                                        <li><strong>Server Scripts:</strong> Mehrere Race Conditions, Memory Leaks und CPU-intensive Loops in den <code>ol_scripts</code> behoben – erhöhte Server-Stabilität und weniger Timeouts.</li>
+                                        <li><strong>Fahrzeug-Ressourcen:</strong> Monolithisches Fahrzeugpaket in einzelne, korrekt streamende FiveM-Ressourcen aufgeteilt. YFT/YTD Isolation und Meta-File Verteilung abgeschlossen.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bugfix 15-16. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion" id="changelog-b1506">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-b1506')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-rotate"></i> Hotfix</span>
+                                <span class="changelog-subtitle">Tipico Synchronisation & Match-Closure</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">15. – 16. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Match-Synchronisation:</strong> Race Conditions behoben, die dazu führten, dass WM-Matches nicht korrekt geschlossen oder ausgewertet wurden.</li>
+                                        <li><strong>Team-Namen Mismatch:</strong> Datenmismatch zwischen englischen API-Teamnamen und deutschen Servernamen behoben – Matches werden nun korrekt zugeordnet und geschlossen.</li>
+                                        <li><strong>Match Closure Logic:</strong> Fehler in der Logik zur automatischen Spielschließung behoben – Auszahlungen werden jetzt zuverlässig nach Spielende ausgelöst.</li>
+                                        <li><strong>Score-Updates UI:</strong> Echtzeit-Spielstand-Anzeige im Ingame-Tipico-System wird nun korrekt aktualisiert.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update WM Tipico 13. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion" id="changelog-wm1306">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-wm1306')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-futbol"></i> WM 2026 Update</span>
+                                <span class="changelog-subtitle">Zeitzonen-Korrektur & Live-Ticker Verbesserungen</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">13. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Zeitzonen-Korrektur:</strong> WM-Anstoßzeiten wurden falsch angezeigt – Umrechnung auf Mitteleuropäische Zeit (MEZ/MESZ) korrekt implementiert.</li>
+                                        <li><strong>API-Ticker Verbindungsfehler:</strong> Verbindungsprobleme zum externen Match-Daten-API behoben – der Live-Ticker läuft nun stabil und unterbrechungsfrei.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature WM Tipico Launch 12. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion" id="changelog-wm1206">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-wm1206')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-star"></i> Neues Feature</span>
+                                <span class="changelog-subtitle">WM 2026 Tipico-System Launch</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">12. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>WM 2026 Tipico-System:</strong> Komplett neues Ingame-Wettsystem für die FIFA Weltmeisterschaft 2026 – Spieler können direkt im Spiel auf echte WM-Matches tippen und Ingame-Geld gewinnen.</li>
+                                        <li><strong>Live-Spielplan:</strong> Alle Gruppenspiele und K.O.-Runden werden automatisch über eine externe API geladen und aktuell gehalten.</li>
+                                        <li><strong>Automatische Auswertung:</strong> Nach Spielende werden Tipps automatisch ausgewertet und Gewinne direkt auf das Ingame-Konto ausgezahlt.</li>
+                                        <li><strong>Tipico-Station:</strong> Ingame NPC-Station, an der Spieler ihre Tipps abgeben, den aktuellen Spielstand einsehen und ihre Tipp-Historie abrufen können.</li>
+                                        <li><strong>Wettlimits:</strong> Fairer Min/Max-Einsatz konfiguriert – verhindert zu hohe Einsätze und balanciert die Spielerwirtschaft.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- System-Update 10. Juni 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
