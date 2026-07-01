@@ -12,7 +12,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style -->
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
             
             <nav class="nav-links">
                 <button class="nav-btn active" id="btn-home" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Start</button>
+                <button class="nav-btn" id="btn-aktuelles" onclick="switchPage('aktuelles')"><i class="fa-solid fa-bullhorn"></i> Aktuelles</button>
                 <button class="nav-btn" id="btn-grundlagen" onclick="switchPage('grundlagen')"><i class="fa-solid fa-graduation-cap"></i> Grundlagen</button>
                 <button class="nav-btn" id="btn-infos" onclick="switchPage('infos')"><i class="fa-solid fa-circle-info"></i> Infos</button>
                 <button class="nav-btn" id="btn-regeln" onclick="switchPage('regeln')"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
@@ -54,6 +55,7 @@
     <!-- Mobile Dropdown Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-nav-btn active" id="m-btn-home" onclick="switchPage('home'); toggleMobileMenu()"><i class="fa-solid fa-house"></i> Startseite</button>
+        <button class="mobile-nav-btn" id="m-btn-aktuelles" onclick="switchPage('aktuelles'); toggleMobileMenu()"><i class="fa-solid fa-bullhorn"></i> Aktuelles</button>
         <button class="mobile-nav-btn" id="m-btn-grundlagen" onclick="switchPage('grundlagen'); toggleMobileMenu()"><i class="fa-solid fa-graduation-cap"></i> Grundlagen</button>
         <button class="mobile-nav-btn" id="m-btn-infos" onclick="switchPage('infos'); toggleMobileMenu()"><i class="fa-solid fa-circle-info"></i> Infos</button>
         <button class="mobile-nav-btn" id="m-btn-regeln" onclick="switchPage('regeln'); toggleMobileMenu()"><i class="fa-solid fa-gavel"></i> Serverregeln</button>
@@ -83,25 +85,7 @@
                         <button onclick="switchPage('grundlagen')" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Grundlagen lesen</button>
                     </div>
                 </div>
-                <!-- WM 2026 Hero Card (rechts) -->
-                <div class="hero-visual">
-                    <div class="wm-hero-card">
-                        <div class="wm-hero-card-top">
-                            <span class="wm-hc-live"><span class="wm-live-dot"></span> LIVE</span>
-                            <span class="wm-hc-title">WM 2026 · Tipico</span>
-                        </div>
-                        <div class="wm-hc-body">
-                            <div class="wm-hc-icon"><i class="fa-solid fa-futbol"></i></div>
-                            <div class="wm-hc-heading">Tippe auf echte<br>WM-Matches!</div>
-                            <p class="wm-hc-desc">Nutze unser <strong>Ingame-Tipico-System</strong> und wette auf echte WM 2026 Spiele — direkt auf dem Server.</p>
-                            <div class="wm-hc-steps">
-                                <div class="wm-hc-step"><span>1</span> Server joinen</div>
-                                <div class="wm-hc-step"><span>2</span> Auf Match tippen</div>
-                                <div class="wm-hc-step wm-hc-step-gold"><span>💰</span> Geld gewinnen</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <!-- Features Info Grid -->
@@ -129,16 +113,121 @@
                     </div>
                 </div>
 
-                <!-- Creator Code Banner — Bold Edition -->
+                <div class="welcome-box">
+                    <p><strong>Onlife ist keine schnelle Idee – sondern ein langfristiges Projekt mit Substanz. Wenn du Teil davon werden willst, bist du jederzeit herzlich willkommen!</strong></p>
+                    <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-primary"><i class="fa-solid fa-door-open"></i> Werde Teil unserer Community</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE: AKTUELLES ================= -->
+        <section class="page" id="page-aktuelles">
+            <div class="section-header">
+                <span class="section-badge"><i class="fa-solid fa-bullhorn"></i> News &amp; Aktionen</span>
+                <h1>Aktuelles &amp; Schnelleinstieg</h1>
+                <p>Bleibe auf dem Laufenden über unsere aktuellen Ingame-Aktionen und erfahre, wie du direkt auf den Server joinst.</p>
+            </div>
+
+            <!-- F8 Direct Connect Card -->
+            <div class="connection-card-wrapper">
+                <div class="connection-card">
+                    <div class="connection-card-header">
+                        <span class="badge-warning"><i class="fa-solid fa-triangle-exclamation"></i> FiveM-Serverbrowser Hinweis</span>
+                        <h2>Direktverbindung über F8-Konsole</h2>
+                    </div>
+                    <div class="connection-card-body">
+                        <p>Aufgrund aktueller FiveM-Heartbeat-Latenzen ist der Server im öffentlichen Serverbrowser temporär schwer auffindbar. Du kannst jedoch jederzeit über die Direktverbindung beitreten:</p>
+                        
+                        <div class="connect-copy-container">
+                            <div class="connect-copy-box">
+                                <span class="connect-f8-tag">F8 Konsole</span>
+                                <code id="connectCmdText">connect 176.96.138.99</code>
+                            </div>
+                            <button class="btn-copy-action" id="copyConnectBtn" onclick="copyConnectCommand()">
+                                <i class="fa-solid fa-copy" id="copyConnectIcon"></i>
+                                <span id="copyConnectBtnText">Kopieren</span>
+                            </button>
+                        </div>
+
+                        <div class="connection-instructions">
+                            <div class="instruction-step">
+                                <div class="step-icon"><i class="fa-solid fa-play"></i></div>
+                                <div class="step-text">
+                                    <strong>1. FiveM starten</strong>
+                                    <span>Starte dein FiveM wie gewohnt.</span>
+                                </div>
+                            </div>
+                            <div class="instruction-step">
+                                <div class="step-icon"><i class="fa-solid fa-keyboard"></i></div>
+                                <div class="step-text">
+                                    <strong>2. Konsole öffnen</strong>
+                                    <span>Drücke im Hauptmenü die Taste <kbd>F8</kbd> auf deiner Tastatur.</span>
+                                </div>
+                            </div>
+                            <div class="instruction-step">
+                                <div class="step-icon"><i class="fa-solid fa-paste"></i></div>
+                                <div class="step-text">
+                                    <strong>3. Befehl einfügen</strong>
+                                    <span>Füge den kopierten Befehl mit <kbd>Strg</kbd> + <kbd>V</kbd> ein und drücke <kbd>Enter</kbd>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promotion items: WM Banner & Creator Code Banner -->
+            <div class="promotion-items">
+                <!-- WM Banner -->
+                <div class="wm-banner">
+                    <div class="wm-banner-top">
+                        <span class="wm-live-badge"><span class="wm-live-dot"></span> LIVE INGAME</span>
+                        <span class="wm-subtitle"><i class="fa-solid fa-calendar-days"></i> Nur während der WM 2026</span>
+                    </div>
+                    <div class="wm-banner-main">
+                        <div class="wm-banner-left">
+                            <div class="wm-big-label">WM 2026 EVENT</div>
+                            <h2 class="wm-big-title">WM-Tippspiel <span>Ingame-System</span></h2>
+                            <p class="wm-desc">Tippe an unseren <strong>Tipico-Stationen</strong> auf echte WM-Matches, verfolge die Spielstände live und gewinne fette Ingame-Preise!</p>
+                        </div>
+                        <div class="wm-banner-right">
+                            <div class="wm-how-grid">
+                                <div class="wm-how-step">
+                                    <div class="wm-how-icon"><i class="fa-solid fa-door-open"></i></div>
+                                    <div>
+                                        <strong>1. Join den Server</strong>
+                                        <span>Verbinde dich über F8</span>
+                                    </div>
+                                </div>
+                                <div class="wm-how-step">
+                                    <div class="wm-how-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                                    <div>
+                                        <strong>2. Tippe abgeben</strong>
+                                        <span>An der Tipico-Station</span>
+                                    </div>
+                                </div>
+                                <div class="wm-how-step">
+                                    <div class="wm-how-icon"><i class="fa-solid fa-trophy"></i></div>
+                                    <div>
+                                        <strong>3. Gewinn abholen</strong>
+                                        <span>Automatische Auszahlung</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wm-deco">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <!-- Creator Code Banner -->
                 <div class="cc-banner">
-                    <!-- Limited time pulse -->
                     <div class="cc-banner-top">
                         <span class="cc-limited"><span class="cc-pulse-dot"></span> NUR FÜR KURZE ZEIT!</span>
                         <span class="cc-howto"><i class="fa-solid fa-terminal"></i> Beim ersten Join <strong>/cc</strong> im Chat eingeben</span>
                     </div>
-
                     <div class="cc-banner-main">
-                        <!-- Left: Big text -->
                         <div class="cc-banner-left">
                             <div class="cc-big-label">CREATOR CODE</div>
                             <div class="cc-big-code">onlife</div>
@@ -147,8 +236,6 @@
                                 <span>1.000.000 $ <em>for free</em></span>
                             </div>
                         </div>
-
-                        <!-- Right: Copy box -->
                         <div class="cc-banner-right">
                             <p class="cc-instruction">Code kopieren &amp; beim Join eingeben:</p>
                             <div class="cc-copy-display">
@@ -167,17 +254,31 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Background decoration -->
                     <div class="cc-banner-bg-deco">
                         <span></span><span></span><span></span><span></span><span></span><span></span>
                     </div>
                 </div>
 
-
-                <div class="welcome-box">
-                    <p><strong>Onlife ist keine schnelle Idee – sondern ein langfristiges Projekt mit Substanz. Wenn du Teil davon werden willst, bist du jederzeit herzlich willkommen!</strong></p>
-                    <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-primary"><i class="fa-solid fa-door-open"></i> Werde Teil unserer Community</a>
+                <!-- Angelevent (Inaktiv) -->
+                <div class="fishing-banner inactive-banner">
+                    <div class="fishing-banner-top">
+                        <span class="fishing-status-badge"><i class="fa-solid fa-circle-xmark"></i> EVENT BEENDET</span>
+                        <span class="fishing-subtitle"><i class="fa-solid fa-calendar-days"></i> Letzte Woche aktiv</span>
+                    </div>
+                    <div class="fishing-banner-main">
+                        <div class="fishing-banner-left">
+                            <div class="fishing-big-label">COMMUNITY EVENT</div>
+                            <h2 class="fishing-big-title">Großes <span>Community Angelevent</span></h2>
+                            <p class="fishing-desc">Ein gemeinschaftliches Ziel für ganz OnLife RP: Die gesamte Community musste zusammen <strong>1.000 Fische</strong> fangen, um ein fettes globales Belohnungs-Event freizuschalten!</p>
+                        </div>
+                        <div class="fishing-banner-right">
+                            <div class="fishing-info-box">
+                                <div class="info-row"><i class="fa-solid fa-users"></i> <span>Gemeinsames Ziel: 1.000 Fische</span></div>
+                                <div class="info-row"><i class="fa-solid fa-fish"></i> <span>Jeder gefangene Fisch zählt</span></div>
+                                <div class="info-row"><i class="fa-solid fa-gift"></i> <span>Globale Belohnungen freigeschaltet</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1047,10 +1148,111 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update 1.4.0 - 01. Juli 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v140">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v140')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-star"></i> Update v1.4.0</span>
+                                <span class="changelog-subtitle">VPS-Startup Optimierung, Copyright-Bereinigung &amp; Web-Domain</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">01. Juli 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Optimiert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>VPS-Startup:</strong> Startup-Latenzen und Timeouts beim Serverstart auf dem VPS erfolgreich behoben für schnellere Online-Zeiten.</li>
+                                        <li><strong>Webseiten-Domain:</strong> Die Anbindung einer eigenen Domain für unsere Homepage ist abgeschlossen und live.</li>
+                                        <li><strong>Richtlinien-Konformität:</strong> Copyright-relevante Inhalte (z. B. markenrechtlich geschützte Fahrzeugmodelle und Logos) entfernt bzw. bereinigt, um den FiveM-Nutzungsbedingungen zu entsprechen – dadurch haben sich auch einige Fahrzeugnamen im Spiel geändert.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 1.3.5 - 23. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion" id="changelog-v135">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v135')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bus"></i> Update v1.3.5</span>
+                                <span class="changelog-subtitle">Busfahrer-Upgrade & Tipico Offline-Caching</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">23. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Bus-Spawning:</strong> Unterstützung für verschiedene Busmodelle und Gelenkbusse eingebaut. Welcher Bus für dich spawnt, wird nun zufällig ausgewürfelt.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Tipico WM-Wetten:</strong> Zuverlässiges Offline-Caching der Spiel-Ergebnisse und verbesserte Absicherung bei API-Fehlern für eine reibungslose Auszahlung der Wetten.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update 1.3.1 - 19. Juni 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion" id="changelog-v131">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v131')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-fish"></i> Update v1.3.1</span>
+                                <span class="changelog-subtitle">Angel-Event Launch & HUD-Verbesserungen</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">19. Juni 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Angel-Event:</strong> Neues Angel-Event (Fishing Event) mit interaktivem Minispiel und coolen Belohnungen gestartet.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>HUD UI:</strong> Die grauen Hintergrund-Backdrops der UI-Elemente wurden für ein minimalistischeres Design entfernt.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Mini-Events:</strong> Logikfehler beim "Alien Hunt" (korrekte Death-Detection und Skin-Reset) sowie beim "Vehicle Saboteur" behoben.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Bugfix 17. Juni 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-b1706">
+                    <div class="changelog-accordion" id="changelog-b1706">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-b1706')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-bug"></i> Bugfix</span>

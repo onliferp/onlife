@@ -299,6 +299,47 @@ function copyCreatorCode() {
     });
 }
 
+// Server Connect Command Copy Function
+function copyConnectCommand() {
+    const cmd = 'connect 176.96.138.99';
+    const btn = document.getElementById('copyConnectBtn');
+    const icon = document.getElementById('copyConnectIcon');
+    const text = document.getElementById('copyConnectBtnText');
+    
+    if (!btn || !icon || !text) return;
+
+    navigator.clipboard.writeText(cmd).then(() => {
+        // Success state
+        btn.classList.add('copied');
+        icon.className = 'fa-solid fa-check';
+        text.textContent = 'Kopiert!';
+        
+        // Reset after 2.5 seconds
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            icon.className = 'fa-solid fa-copy';
+            text.textContent = 'Kopieren';
+        }, 2500);
+    }).catch(() => {
+        // Fallback for older browsers
+        const el = document.createElement('textarea');
+        el.value = cmd;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        
+        btn.classList.add('copied');
+        icon.className = 'fa-solid fa-check';
+        text.textContent = 'Kopiert!';
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            icon.className = 'fa-solid fa-copy';
+            text.textContent = 'Kopieren';
+        }, 2500);
+    });
+}
+
 // Gallery Lightbox Modal Logic
 function openLightbox(imageSrc, captionText) {
     const modal = document.getElementById('lightboxModal');

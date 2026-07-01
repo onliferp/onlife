@@ -132,17 +132,23 @@ body {
     background: rgba(6, 9, 19, 0.75);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    height: 80px;
+    min-height: 80px;
+    height: auto;
+    padding: 8px 0;
+    transition: var(--transition);
 }
 
 .nav-container {
-    max-width: 1300px;
+    max-width: 1450px; /* Made wider to prevent squeezing */
     margin: 0 auto;
-    height: 100%;
+    min-height: 64px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
+    flex-wrap: wrap; /* Support wrapping of header items */
+    gap: 12px 24px;
 }
 
 .brand-logo {
@@ -170,9 +176,10 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2px;
+    gap: 6px 4px;
     margin: 0 10px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-btn {
@@ -313,12 +320,13 @@ body {
 /* Master Pages Container & Page Transitions */
 .pages-container {
     flex: 1;
-    margin-top: 80px;
+    margin-top: 110px; /* Extra room on desktop for potential header wrapping */
     padding: 40px 24px;
     max-width: 1200px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    transition: margin-top 0.3s ease;
 }
 
 .page {
@@ -340,11 +348,13 @@ body {
 
 /* Hero Block */
 .hero-block {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 40px 0 80px 0;
+    text-align: center;
+    padding: 60px 0 100px 0;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .hero-tagline {
@@ -381,12 +391,15 @@ body {
     color: var(--text-muted);
     font-size: 18px;
     margin-bottom: 36px;
-    max-width: 580px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-btns {
     display: flex;
     gap: 16px;
+    justify-content: center;
 }
 
 /* WM 2026 Hero Card (compact, rechts im Hero) */
@@ -534,6 +547,7 @@ body {
         0 20px 60px rgba(0, 0, 0, 0.6),
         0 0 80px rgba(34, 197, 94, 0.06);
     animation: wmBannerPulse 3s ease-in-out infinite alternate;
+    max-width: 960px;
 }
 
 @keyframes wmBannerPulse {
@@ -978,6 +992,7 @@ body {
         0 20px 60px rgba(0, 0, 0, 0.6),
         0 0 80px rgba(239, 68, 68, 0.07);
     animation: bannerPulse 3s ease-in-out infinite alternate;
+    max-width: 960px;
 }
 
 @keyframes bannerPulse {
@@ -2080,6 +2095,310 @@ body {
     100% { transform: scale(1.2); }
 }
 
+/* Server Status Card in Hero Section */
+.server-status-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.server-status-card:hover {
+    border-color: rgba(239, 68, 68, 0.35);
+    box-shadow: 0 20px 50px rgba(239, 68, 68, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.status-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status-badge.online {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulseDot 1.5s infinite;
+}
+
+.players-count {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.status-logo {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.status-logo span {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.status-card-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.status-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 20px;
+}
+
+.status-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Connection Card in Aktuelles Page */
+.connection-card-wrapper {
+    margin-bottom: 40px;
+}
+
+.connection-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.connection-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 24px;
+    background: radial-gradient(circle at 10% 10%, rgba(239, 68, 68, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.connection-card-header h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    margin: 12px 0 16px 0;
+    color: var(--text-main);
+}
+
+.badge-warning {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.connection-card-body p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.connect-copy-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.connect-copy-box {
+    flex: 1;
+    min-width: 250px;
+    background: #03060f;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.connect-f8-tag {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(239, 68, 68, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.connect-copy-box code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.btn-copy-action {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+}
+
+.btn-copy-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+}
+
+.btn-copy-action.copied {
+    background: #22c55e;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.25);
+}
+
+.connection-instructions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 28px;
+}
+
+.instruction-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.step-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.step-text strong {
+    font-family: var(--font-heading);
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.step-text span {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.step-text kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* News page promotion grid */
+.promotion-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 /* ==========================================================================
    RESPONSIVENESS (MOBILE / TABLET SUPPORT)
    ========================================================================== */
@@ -2125,6 +2444,10 @@ body {
     
     .mobile-toggle {
         display: block;
+    }
+
+    .pages-container {
+        margin-top: 80px; /* Standard mobile header is 80px */
     }
 }
 
@@ -3294,3 +3617,127 @@ body {
         padding: 28px 24px;
     }
 }
+
+/* Inactive Banner Styles */
+.inactive-banner {
+    position: relative;
+    border-radius: 24px;
+    padding: 32px 36px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.55;
+    filter: grayscale(40%);
+    transition: var(--transition);
+    max-width: 960px;
+    margin: 0 auto 50px auto;
+}
+
+.inactive-banner:hover {
+    opacity: 0.75;
+    filter: grayscale(20%);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.fishing-banner-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+}
+
+.fishing-status-badge {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fishing-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.fishing-banner-main {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fishing-banner-left {
+    flex: 1.2;
+}
+
+.fishing-big-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.fishing-big-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.fishing-big-title span {
+    background: linear-gradient(135deg, #38bdf8 0%, #0369a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fishing-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.fishing-banner-right {
+    flex: 0.8;
+}
+
+.fishing-info-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.info-row i {
+    color: #38bdf8;
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .fishing-banner-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+}
+
