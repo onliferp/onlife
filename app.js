@@ -382,38 +382,34 @@ function toggleChangelog(cardId) {
     card.classList.toggle('open');
 }
 
-// Background Music Playback Logic
-function toggleMusic() {
-    const audio = document.getElementById('bg-audio');
-    const visualizer = document.getElementById('musicVisualizer');
-    const statusText = document.getElementById('musicStatus');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    
-    if (!audio) return;
-    
-    if (audio.paused) {
-        // Play audio
-        audio.play().then(() => {
-            visualizer.classList.add('animating');
-            statusText.textContent = 'Aktiv';
-            playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-        }).catch(err => {
-            console.log('Autoplay was blocked or audio failed to load: ', err);
-        });
-    } else {
-        // Pause audio
-        audio.pause();
-        visualizer.classList.remove('animating');
-        statusText.textContent = 'Aus';
-        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-    }
-}
-
-// Set pleasant background music volume on DOMContentLoaded
+// Live Visitor Counter Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('bg-audio');
-    if (audio) {
-        audio.volume = 0.25; // Quiet, perfect ambient background level
+    const visitorCountVal = document.getElementById('visitorCountVal');
+    if (visitorCountVal) {
+        // API URL to increment and get count (using counterapi.dev v1)
+        const counterUrl = 'https://api.counterapi.dev/v1/onliferp/visits/up';
+        
+        fetch(counterUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && typeof data.count !== 'undefined') {
+                    // Format count with dots for thousands, e.g., 1.234
+                    const formattedCount = Number(data.count).toLocaleString('de-DE');
+                    visitorCountVal.textContent = formattedCount;
+                } else {
+                    visitorCountVal.textContent = 'Aktiv';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching visitor count:', error);
+                // Fallback to "Aktiv" or simple placeholder if API is offline
+                visitorCountVal.textContent = 'Aktiv';
+            });
     }
 });
 
@@ -511,3 +507,45 @@ function filterKeys(cat) {
         }
     });
 }
+
+// Theme Toggle Logic (Light / Dark Mode)
+function toggleTheme() {
+    const body = document.body;
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (!themeBtn) return;
+    
+    const isLight = body.classList.toggle('light-mode');
+    
+    // Save state in localStorage
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    
+    // Update button icon
+    updateThemeIcon(isLight);
+}
+
+function updateThemeIcon(isLight) {
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (!themeBtn) return;
+    
+    if (isLight) {
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        themeBtn.setAttribute('title', 'Dunklen Modus aktivieren');
+    } else {
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        themeBtn.setAttribute('title', 'Hellen Modus aktivieren');
+    }
+}
+
+// Initial Theme Check on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark'; // Dark mode is default
+    const body = document.body;
+    
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        updateThemeIcon(true);
+    } else {
+        body.classList.remove('light-mode');
+        updateThemeIcon(false);
+    }
+});

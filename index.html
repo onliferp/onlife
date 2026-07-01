@@ -42,13 +42,19 @@
                 <button class="nav-btn" id="btn-impressum" onclick="switchPage('impressum')"><i class="fa-solid fa-scale-balanced"></i> Impressum</button>
             </nav>
 
-            <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="discord-cta">
-                <i class="fa-brands fa-discord"></i> Discord beitreten
-            </a>
-
-            <button class="mobile-toggle" onclick="toggleMobileMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="header-actions">
+                <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="discord-cta">
+                    <i class="fa-brands fa-discord"></i> Discord beitreten
+                </a>
+                
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Farbschema umschalten">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                
+                <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -2005,8 +2011,21 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <p>&copy; 2026 OnLifeRP. Alle Rechte vorbehalten. Privatprojekt ohne kommerzielle Absichten.</p>
-            <p>Erstellt mit <i class="fa-solid fa-heart heart-pulse"></i> für die OnLife Community — Gehostet auf GitHub Pages.</p>
+            <div class="footer-info">
+                <p>&copy; 2026 OnLifeRP. Alle Rechte vorbehalten. Privatprojekt ohne kommerzielle Absichten.</p>
+                <p>Erstellt mit <i class="fa-solid fa-heart heart-pulse"></i> für die OnLife Community — Gehostet auf GitHub Pages.</p>
+            </div>
+            <!-- Visitor Counter Pill -->
+            <div class="visitor-counter" id="visitorCounter">
+                <div class="counter-icon">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="counter-dot"></span>
+                </div>
+                <div class="counter-details">
+                    <span class="counter-label">Besucher (Live)</span>
+                    <span class="counter-value" id="visitorCountVal">...</span>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -2016,27 +2035,6 @@
         <img class="lightbox-content" id="lightboxImg" onclick="event.stopPropagation()">
         <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
-
-    <!-- Background Music Controller Pill -->
-    <div class="music-controller" id="musicController">
-        <div class="music-visualizer" id="musicVisualizer">
-            <span class="bar bar-1"></span>
-            <span class="bar bar-2"></span>
-            <span class="bar bar-3"></span>
-            <span class="bar bar-4"></span>
-        </div>
-        <div class="music-details">
-            <span class="music-title">Ambient Mode</span>
-            <span class="music-status" id="musicStatus">Aus</span>
-        </div>
-        <button class="music-btn" id="playPauseBtn" onclick="toggleMusic()" aria-label="Musik abspielen">
-            <i class="fa-solid fa-play"></i>
-        </button>
-    </div>
-
-    <audio id="bg-audio" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-retro-future-clean-56.mp3" type="audio/mpeg">
-    </audio>
 
     <!-- Scripts -->
     <script src="app.js"></script>
