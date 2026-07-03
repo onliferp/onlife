@@ -2266,16 +2266,17 @@ body.light-mode ::-webkit-scrollbar-thumb {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 24px;
+    position: relative;
 }
 
 .footer-info {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 .main-footer p {
@@ -3221,6 +3222,8 @@ body.light-mode ::-webkit-scrollbar-thumb {
     transition: var(--transition);
     user-select: none;
     flex-shrink: 0;
+    position: absolute;
+    right: 0;
 }
 
 .visitor-counter:hover {
@@ -3300,6 +3303,8 @@ body.light-mode ::-webkit-scrollbar-thumb {
         text-align: center;
     }
     .visitor-counter {
+        position: static;
+        margin-top: 10px;
         padding: 8px 14px;
         gap: 10px;
     }
