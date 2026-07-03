@@ -1785,6 +1785,7 @@
                 <button class="kb-filter-btn" onclick="filterKeys('interaktion')" id="kf-interaktion"><i class="fa-solid fa-hand-pointer"></i> Interaktion</button>
                 <button class="kb-filter-btn" onclick="filterKeys('fahrzeug')" id="kf-fahrzeug"><i class="fa-solid fa-car"></i> Fahrzeug</button>
                 <button class="kb-filter-btn" onclick="filterKeys('kommunikation')" id="kf-kommunikation"><i class="fa-solid fa-comments"></i> Kommunikation</button>
+                <button class="kb-filter-btn" onclick="filterKeys('housing')" id="kf-housing"><i class="fa-solid fa-house"></i> Housing</button>
                 <button class="kb-filter-btn" onclick="filterKeys('system')" id="kf-system"><i class="fa-solid fa-gear"></i> System</button>
             </div>
 
@@ -1802,10 +1803,10 @@
                             <div class="kb-key kb-bound" data-key="F1" data-action="Handy &ouml;ffnen" data-cat="system" data-icon="fa-mobile-screen">F1</div>
                             <div class="kb-key kb-bound" data-key="F2" data-action="Inventar &ouml;ffnen" data-cat="interaktion" data-icon="fa-bag-shopping">F2</div>
                             <div class="kb-key kb-bound" data-key="F3" data-action="Emote ausf&uuml;hren" data-cat="interaktion" data-icon="fa-face-laugh-wink">F3</div>
-                            <div class="kb-key" data-key="F4">F4</div>
+                            <div class="kb-key kb-bound" data-key="F4" data-action="Freie Kamera (Deko-Modus)" data-cat="housing" data-icon="fa-camera">F4</div>
                             <div class="kb-spacer"></div>
-                            <div class="kb-key" data-key="F5">F5</div>
-                            <div class="kb-key kb-bound" data-key="F6" data-action="Actionmen&uuml; &ouml;ffnen" data-cat="interaktion" data-icon="fa-list">F6</div>
+                            <div class="kb-key kb-bound" data-key="F5" data-action="Mauszeiger an/aus (Deko-Modus)" data-cat="housing" data-icon="fa-mouse-pointer">F5</div>
+                            <div class="kb-key kb-bound" data-key="F6" data-action="Actionmenü öffnen / UI ausblenden (Deko-Modus)" data-cat="interaktion" data-icon="fa-list">F6</div>
                             <div class="kb-key kb-bound" data-key="F7" data-action="Rechnungen anzeigen" data-cat="system" data-icon="fa-file-invoice-dollar">F7</div>
                             <div class="kb-key kb-bound" data-key="F8" data-action="Console &ouml;ffnen" data-cat="system" data-icon="fa-terminal">F8</div>
                             <div class="kb-spacer"></div>
@@ -1824,7 +1825,7 @@
                             <div class="kb-key" data-key="4">4</div>
                             <div class="kb-key" data-key="5">5</div>
                             <div class="kb-key" data-key="6">6</div>
-                            <div class="kb-key" data-key="7">7</div>
+                            <div class="kb-key kb-bound" data-key="7" data-action="Haus-Tablet / Men&uuml; &ouml;ffnen" data-cat="housing" data-icon="fa-laptop-house">7</div>
                             <div class="kb-key" data-key="8">8</div>
                             <div class="kb-key" data-key="9">9</div>
                             <div class="kb-key" data-key="0">0</div>
@@ -1836,9 +1837,9 @@
                         <!-- Row 2: Tab / QWERTZ -->
                         <div class="kb-row">
                             <div class="kb-key kb-bound kb-wide" data-key="TAB" data-action="Actionbar anzeigen" data-cat="interaktion" data-icon="fa-table-cells">Tab</div>
-                            <div class="kb-key" data-key="Q">Q</div>
+                            <div class="kb-key kb-bound" data-key="Q" data-action="Achsen-Ausrichtung (Lokal/Welt, Deko-Modus)" data-cat="housing" data-icon="fa-arrows-spin">Q</div>
                             <div class="kb-key" data-key="W">W</div>
-                            <div class="kb-key" data-key="E">E</div>
+                            <div class="kb-key kb-bound" data-key="E" data-action="Interagieren / M&ouml;bel platzieren / Position festlegen (Deko-Modus)" data-cat="housing" data-icon="fa-hand-pointer">E</div>
                             <div class="kb-key kb-bound" data-key="R" data-action="Nachladen" data-cat="bewegung" data-icon="fa-gun">R</div>
                             <div class="kb-key kb-bound" data-key="T" data-action="Chat &ouml;ffnen" data-cat="kommunikation" data-icon="fa-comments">T</div>
                             <div class="kb-key" data-key="Z">Z</div>
@@ -1848,7 +1849,7 @@
                             <div class="kb-key" data-key="P">P</div>
                             <div class="kb-key" data-key="&Uuml;">&Uuml;</div>
                             <div class="kb-key" data-key="+">+</div>
-                            <div class="kb-key kb-wide" data-key="Enter">Enter</div>
+                            <div class="kb-key kb-bound kb-wide" data-key="Enter" data-action="Bestätigen / Möbel kaufen (Deko-Modus)" data-cat="housing" data-icon="fa-check">Enter</div>
                         </div>
 
                         <!-- Row 3: CapsLock / ASDF -->
@@ -1858,10 +1859,10 @@
                             <div class="kb-key" data-key="S">S</div>
                             <div class="kb-key" data-key="D">D</div>
                             <div class="kb-key kb-bound" data-key="F" data-action="Fahrzeug ein-/aussteigen" data-cat="fahrzeug" data-icon="fa-car-side">F</div>
-                            <div class="kb-key kb-bound" data-key="G" data-action="Kfz Schloss sperren/entsperren" data-cat="fahrzeug" data-icon="fa-lock">G</div>
-                            <div class="kb-key kb-bound" data-key="H" data-action="H-Taste (Aktion)" data-cat="interaktion" data-icon="fa-hand">H</div>
+                            <div class="kb-key kb-bound" data-key="G" data-action="Kfz sperren/entsperren / Türklingel betätigen / Besuch beenden" data-cat="fahrzeug" data-icon="fa-lock">G</div>
+                            <div class="kb-key kb-bound" data-key="H" data-action="Aktionstaste (Möbel stehlen / Haustür-Kamera)" data-cat="interaktion" data-icon="fa-hand">H</div>
                             <div class="kb-key" data-key="J">J</div>
-                            <div class="kb-key" data-key="K">K</div>
+                            <div class="kb-key kb-bound" data-key="K" data-action="Aura Sprachassistent / Bewegen &amp; Drehen umschalten (Deko-Modus)" data-cat="housing" data-icon="fa-microphone">K</div>
                             <div class="kb-key kb-bound" data-key="L" data-action="Kfz Licht an/aus" data-cat="fahrzeug" data-icon="fa-lightbulb">L</div>
                             <div class="kb-key" data-key="&Ouml;">&Ouml;</div>
                             <div class="kb-key" data-key="&Auml;">&Auml;</div>
@@ -1878,7 +1879,7 @@
                             <div class="kb-key kb-bound" data-key="V" data-action="Kamera wechseln" data-cat="system" data-icon="fa-video">V</div>
                             <div class="kb-key kb-bound" data-key="B" data-action="Tempomat (Fahrzeug)" data-cat="fahrzeug" data-icon="fa-gauge-high">B</div>
                             <div class="kb-key" data-key="N">N</div>
-                            <div class="kb-key" data-key="M">M</div>
+                            <div class="kb-key kb-bound" data-key="M" data-action="3D-Gizmo umschalten (Deko-Modus)" data-cat="housing" data-icon="fa-arrows-to-dot">M</div>
                             <div class="kb-key" data-key=",">,</div>
                             <div class="kb-key" data-key=".">.</div>
                             <div class="kb-key" data-key="-">-</div>
@@ -2043,6 +2044,29 @@
                             <li><kbd>T</kbd> Chat &ouml;ffnen</li>
                             <li><kbd>F11</kbd> Sprachweite</li>
                         </ul>
+                    </div>
+                    <div class="kb-legend-card">
+                        <div class="kb-legend-cat-header housing"><i class="fa-solid fa-house"></i> Housing</div>
+                        <ul style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                            <li><kbd>7</kbd> Tablet / Men&uuml;</li>
+                            <li><kbd>E</kbd> Interagieren / M&ouml;bel platzieren</li>
+                            <li><kbd>K</kbd> Sprachassistent / Ausrichten</li>
+                            <li><kbd>G</kbd> Klingeln / Besuch beenden</li>
+                            <li><kbd>H</kbd> Kamera / M&ouml;bel stehlen</li>
+                        </ul>
+                        <div style="padding: 12px 16px; font-size: 11px; color: var(--text-muted); background: rgba(0,0,0,0.15);">
+                            <strong style="display:block;margin-bottom:6px;color:var(--text-main);font-size:11.5px;"><i class="fa-solid fa-couch"></i> Möbel-Einrichtung</strong>
+                            <ul style="padding:0;margin:0;list-style:none;">
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F4</span> Freie Kamera</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F5</span> Cursor an/aus</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F6</span> UI ausblenden</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">E</span> Möbel platzieren / Pos festlegen</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">K</span> Bewegen / Rotieren</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">Q</span> Achsen (Lokal/Welt)</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">M</span> 3D-Gizmo umschalten</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border:none;font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">Enter</span> Möbel kaufen</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

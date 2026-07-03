@@ -434,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bewegung:      'Bewegung',
             fahrzeug:      'Fahrzeug',
             kommunikation: 'Kommunikation',
+            housing:       'Housing / Immobilien',
         };
 
         // Attach hover events to all keys with an action

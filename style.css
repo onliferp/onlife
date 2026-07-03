@@ -3676,6 +3676,7 @@ body.light-mode ::-webkit-scrollbar-thumb {
 .kbt-cat.bewegung      { background: rgba(239, 68, 68, 0.2);  color: #fca5a5; }
 .kbt-cat.fahrzeug      { background: rgba(251, 191, 36, 0.2); color: #fde68a; }
 .kbt-cat.kommunikation { background: rgba(6, 182, 212, 0.2);  color: #a5f3fc; }
+.kbt-cat.housing       { background: rgba(236, 72, 153, 0.2); color: #fbcfe8; }
 
 /* Legend */
 .kb-legend-section {
@@ -3733,6 +3734,7 @@ body.light-mode ::-webkit-scrollbar-thumb {
 .kb-legend-cat-header.bewegung      { background: rgba(239,68,68,0.15);   color: #fca5a5; border-bottom: 1px solid rgba(239,68,68,0.2); }
 .kb-legend-cat-header.fahrzeug      { background: rgba(251,191,36,0.15);  color: #fde68a; border-bottom: 1px solid rgba(251,191,36,0.2); }
 .kb-legend-cat-header.kommunikation { background: rgba(6,182,212,0.15);   color: #a5f3fc; border-bottom: 1px solid rgba(6,182,212,0.2); }
+.kb-legend-cat-header.housing       { background: rgba(236,72,153,0.15);  color: #fbcfe8; border-bottom: 1px solid rgba(236,72,153,0.2); }
 
 .kb-legend-card ul {
     list-style: none;
