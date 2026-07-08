@@ -1154,10 +1154,57 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update 1.5.0 - 08. Juli 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v150">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v150')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-tablet-screen-button"></i> Update v1.5.0</span>
+                                <span class="changelog-subtitle">Bewerbungs- &amp; Waffenlizenz-Tablet-Systeme</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">08. Juli 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Bewerbungsportal Staatsfraktionen:</strong> Komplett eigenständiges Tablet-System für Bewerbungen bei LSPD, LSMD und LSM (Mechaniker) direkt an den jeweiligen Standorten.</li>
+                                        <li><strong>Automatisches Auslesen:</strong> Bewerbungsdaten wie Charaktername und Telefonnummer (vollständig kompatibel mit <code>lb-phone</code>) werden automatisch aus der Datenbank geladen.</li>
+                                        <li><strong>Fraktions-Verwaltung:</strong> HR-Terminals für Bosse und berechtigte Ränge zum Verwalten (Annehmen, Ablehnen, Löschen) von offenen Bewerbungen.</li>
+                                        <li><strong>PD-Waffenlizenz-Tablet:</strong> Interaktives Tablet zur theoretischen Waffenschein-Prüfung direkt im LSPD mit einem Cop-NPC als Prüfer.</li>
+                                        <li><strong>Zufälliger Fragenpool:</strong> Pro Prüfungsversuch werden 10 randomisierte Fachfragen aus einem Pool von 25 deutschen Fragen geladen.</li>
+                                        <li><strong>Dynamische Prüfungsgebühr:</strong> Die Kosten steigen bei Entzug des Waffenscheins dynamisch an (1. Kauf: $50.000, 2. Kauf: $75.000, ab dem 3. Kauf: $100.000).</li>
+                                        <li><strong>Discord-Webhook Logging:</strong> Protokollierung aller Prüfungsaktivitäten (Starts, Erfolge, Misserfolge) direkt in euren Discord-Channel.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title change"><i class="fa-solid fa-gear"></i> Geändert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Marker-Design:</strong> Einheitliche Anpassung aller Interaktionspunkte auf rote Boden-Zylinder (Größe 0.7x0.7x0.7).</li>
+                                        <li><strong>HUD-Radius &amp; Interaktion:</strong> Der Interaktionsradius wurde auf 1,0 Meter verkürzt. HelpNotify wird nun beim Verlassen des Markers sofort ausgeblendet.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Exploit- &amp; Crashschutz:</strong> Vollständig server-seitig validiertes System gegen unerwünschte Manipulationen (Anti-Cheat).</li>
+                                        <li><strong>Ped-Bereinigung:</strong> Zuverlässiges Löschen von alten NPCs bei Skript-Restarts zur Vermeidung von NPC-Klonen.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update 1.4.5 - 03. Juli 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v145">
+                    <div class="changelog-accordion" id="changelog-v145">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v145')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-car"></i> Update v1.4.5</span>
