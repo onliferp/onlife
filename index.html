@@ -1157,10 +1157,47 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update 1.7.0 - 17. August 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v170">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v170')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.0</span>
+                                <span class="changelog-subtitle">Farming-Simulator, Neues Pausenmenü, Helikopter-Tuning, Guidebook &amp; Map-Fixes</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">17. August 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu &amp; Überarbeitet</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Farming-Simulator System:</strong> Integration von <code>lc_farming_simulator</code> für erweitertes Landwirtschafts-Gameplay mit korrigierten Datenbank-Tabellen &amp; Konfigurationen.</li>
+                                        <li><strong>Neues Pausenmenü:</strong> Eigenes Pausenmenü (<code>ol_pausenmenu</code>) im roten ONLIFE-Design mit Direktlinks zu Regelwerk, Tastenbelegungen, Website &amp; Discord. Unnötige Standard-Menüpunkte wurden entfernt.</li>
+                                        <li><strong>Ingame Guidebook:</strong> Das Guidebook (<code>rcore_guidebook</code>) wurde vollständig auf Deutsch überarbeitet und mit aktuellem Regelwerk &amp; Gesetzbuch befüllt. Inklusive automatischem Datenbank-Seeding und rotem Server-Styling.</li>
+                                        <li><strong>Helikopter-Tuning (ol_helituning):</strong> Kamera-Steuerung beim Tunen vereinfacht (kein STRG-Zwang mehr), UI-Hinweise angepasst und serverseitige Kostenberechnung abgesichert.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben &amp; Optimiert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Map-Blips Fix:</strong> Problem mit verschwindenden oder flackernden Karten-Markierungen beim Öffnen der Pausekarte behoben.</li>
+                                        <li><strong>System-Benachrichtigungen &amp; Progressbar:</strong> Anpassungen in <code>lc_utils</code> für nahtlose Benachrichtigungen &amp; Fortschrittsbalken über <code>hex_hud_prem</code> und <code>jobs_creator</code>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update 1.6.0 - 16. August 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v160">
+                    <div class="changelog-accordion" id="changelog-v160">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v160')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.6.0</span>
