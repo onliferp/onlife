@@ -1204,10 +1204,41 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update v1.7.1 - 18. August 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v171">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v171')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.1</span>
+                                <span class="changelog-subtitle">Server-Stabilität, Connection-Timeout Schutz &amp; Datenbank-Optimierung</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">18. August 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben &amp; Optimiert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Server-Timeout Schutz:</strong> Client-Timeout-Toleranz in der <code>server.cfg</code> auf 60 Sekunden erhöht (<code>cl_connectionTimeout 60000</code>). Verhindert unerwünschte Disconnects ("Server-to-client connection timed out") bei Netzwerk-Schwankungen.</li>
+                                        <li><strong>MySQL Connection-Pooling:</strong> Datenbank-Verbindungen in der <code>server.cfg</code> optimiert (<code>connectionLimit=25</code>) für blitzschnelle parallele Abfragen von Garagen, Inventar und Spielerdaten.</li>
+                                        <li><strong>Vote-System Fix (vote):</strong> Vollständige Migration auf <code>oxmysql</code> und Absicherung gegen Script-Crashes bei der Belohnungsvergabe.</li>
+                                        <li><strong>FFA-Arena Fix (vin-ffa):</strong> Fehlende Datenbank-Abhängigkeit integriert und Benachrichtigungs-System korrigiert (Behebung von "attempt to index nil" Fehlern).</li>
+                                        <li><strong>Datenbank-Bereinigung:</strong> Veraltete Rechnungen in der <code>billing</code>-Tabelle vollständig geleert – beseitigt Abfrage-Lags und beschleunigt das Laden von Menüs.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update 1.7.0 - 17. August 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v170">
+                    <div class="changelog-accordion" id="changelog-v170">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v170')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.0</span>
