@@ -12,7 +12,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style -->
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -130,54 +130,84 @@
         <section class="page" id="page-aktuelles">
             <div class="section-header">
                 <span class="section-badge"><i class="fa-solid fa-bullhorn"></i> News &amp; Aktionen</span>
-                <h1>Aktuelles &amp; Schnelleinstieg</h1>
-                <p>Bleibe auf dem Laufenden über unsere aktuellen Ingame-Aktionen und erfahre, wie du direkt auf den Server joinst.</p>
+                <h1>Aktuelles</h1>
+                <p>Bleibe auf dem Laufenden über aktuelle Neuigkeiten, Aktionen und Möglichkeiten auf OnLife RP.</p>
             </div>
 
-            <!-- F8 Direct Connect Card -->
+            <!-- Supporter Suche Banner -->
             <div class="connection-card-wrapper">
-                <div class="connection-card">
+                <div class="connection-card supporter-banner">
                     <div class="connection-card-header">
-                        <span class="badge-warning"><i class="fa-solid fa-triangle-exclamation"></i> FiveM-Serverbrowser Hinweis</span>
-                        <h2>Direktverbindung über F8-Konsole</h2>
+                        <span class="badge-green"><i class="fa-solid fa-handshake"></i> Wir suchen Verstärkung</span>
+                        <h2>Werde Teil des Support-Teams!</h2>
                     </div>
                     <div class="connection-card-body">
-                        <p>Aufgrund aktueller FiveM-Heartbeat-Latenzen ist der Server im öffentlichen Serverbrowser temporär schwer auffindbar. Du kannst jedoch jederzeit über die Direktverbindung beitreten:</p>
-                        
-                        <div class="connect-copy-container">
-                            <div class="connect-copy-box">
-                                <span class="connect-f8-tag">F8 Konsole</span>
-                                <code id="connectCmdText">connect 176.96.138.99</code>
+                        <p>Du kennst den Server in- und auswendig, hast Lust anderen Spielern zu helfen und bist ein zuverlässiger Teil der Community? Dann bewirb dich jetzt als <strong>Supporter</strong> bei OnLife RP!</p>
+                        <div class="supporter-perks">
+                            <div class="supporter-perk">
+                                <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div class="step-text">
+                                    <strong>Verantwortung übernehmen</strong>
+                                    <span>Hilf bei Supportfällen, Fragen und Regelauslegungen.</span>
+                                </div>
                             </div>
-                            <button class="btn-copy-action" id="copyConnectBtn" onclick="copyConnectCommand()">
-                                <i class="fa-solid fa-copy" id="copyConnectIcon"></i>
-                                <span id="copyConnectBtnText">Kopieren</span>
-                            </button>
+                            <div class="supporter-perk">
+                                <div class="step-icon"><i class="fa-solid fa-users-gear"></i></div>
+                                <div class="step-text">
+                                    <strong>Teil des Teams werden</strong>
+                                    <span>Arbeite eng mit der Serverleitung zusammen.</span>
+                                </div>
+                            </div>
+                            <div class="supporter-perk">
+                                <div class="step-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="step-text">
+                                    <strong>Exklusive Vorteile</strong>
+                                    <span>Als Supporter profitierst du von besonderen Ingame-Vorteilen.</span>
+                                </div>
+                            </div>
                         </div>
+                        <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-flex;">
+                            <i class="fa-brands fa-discord"></i> Jetzt im Discord bewerben
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="connection-instructions">
-                            <div class="instruction-step">
-                                <div class="step-icon"><i class="fa-solid fa-play"></i></div>
+            <!-- Gangs & Zivis Banner -->
+            <div class="connection-card-wrapper" style="margin-top: 24px;">
+                <div class="connection-card">
+                    <div class="connection-card-header">
+                        <span class="badge-warning"><i class="fa-solid fa-users"></i> Fraktionen & Rollen</span>
+                        <h2>Gangs &amp; Zivilisten gesucht!</h2>
+                    </div>
+                    <div class="connection-card-body">
+                        <p>Egal ob du das Stadtleben als <strong>Zivilist</strong> genießen oder in einer <strong>Gang</strong> für Macht und Einfluss kämpfen willst — OnLife RP bietet dir den perfekten Einstieg.</p>
+                        <div class="supporter-perks">
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #1a3a5c, #2980b9);"><i class="fa-solid fa-city"></i></div>
                                 <div class="step-text">
-                                    <strong>1. FiveM starten</strong>
-                                    <span>Starte dein FiveM wie gewohnt.</span>
+                                    <strong>Ziviles Leben</strong>
+                                    <span>Starte als Bürger, baue dir ein Leben auf, eröffne ein Geschäft oder werde Staatsdiener.</span>
                                 </div>
                             </div>
-                            <div class="instruction-step">
-                                <div class="step-icon"><i class="fa-solid fa-keyboard"></i></div>
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #3a1a1a, #c0392b);"><i class="fa-solid fa-skull"></i></div>
                                 <div class="step-text">
-                                    <strong>2. Konsole öffnen</strong>
-                                    <span>Drücke im Hauptmenü die Taste <kbd>F8</kbd> auf deiner Tastatur.</span>
+                                    <strong>Gang-Leben</strong>
+                                    <span>Gründe oder tritt einer Gang bei, kämpfe um Territorien und verdiene auf dem schwarzen Markt.</span>
                                 </div>
                             </div>
-                            <div class="instruction-step">
-                                <div class="step-icon"><i class="fa-solid fa-paste"></i></div>
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #1a3a1a, #27ae60);"><i class="fa-solid fa-briefcase"></i></div>
                                 <div class="step-text">
-                                    <strong>3. Befehl einfügen</strong>
-                                    <span>Füge den kopierten Befehl mit <kbd>Strg</kbd> + <kbd>V</kbd> ein und drücke <kbd>Enter</kbd>.</span>
+                                    <strong>Karriere machen</strong>
+                                    <span>Werde Polizist, Sanitäter oder Mechaniker und gestalte den Server aktiv mit.</span>
                                 </div>
                             </div>
                         </div>
+                        <a href="https://discord.gg/cyHG3NZBD3" target="_blank" class="btn btn-secondary" style="margin-top: 20px; display: inline-flex;">
+                            <i class="fa-brands fa-discord"></i> Jetzt beitreten &amp; loslegen
+                        </a>
                     </div>
                 </div>
             </div>
@@ -369,6 +399,23 @@
                     <h2>Avoro – Zuverlässiges Hosting</h2>
                     <p>Avoro ist unser Partner für zuverlässiges Serverhosting und professionelle Infrastruktur. Dank Avoro läuft unser Server stabil, sicher und performant – damit du ohne Unterbrechungen ins Roleplay eintauchen kannst. Mit modernster Technik und erstklassigem Support sorgt Avoro dafür, dass unser Projekt immer rund läuft.</p>
                     <a href="https://avoro.eu/de" target="_blank" class="card-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> avoro.eu</a>
+                </div>
+
+                <!-- Direktverbindung -->
+                <div class="info-card">
+                    <div class="info-icon-large" style="color: var(--cyan);"><i class="fa-solid fa-terminal"></i></div>
+                    <h2>Direktverbindung über F8</h2>
+                    <p>Verbinde dich direkt über die FiveM-Konsole mit unserem Server. Starte FiveM, drücke <kbd style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-family:monospace;">F8</kbd> im Hauptmenü und gib den folgenden Befehl ein:</p>
+                    <div class="connect-copy-container" style="margin-top: 14px;">
+                        <div class="connect-copy-box">
+                            <span class="connect-f8-tag">F8 Konsole</span>
+                            <code id="connectCmdTextInfo">connect 176.96.138.99</code>
+                        </div>
+                        <button class="btn-copy-action" id="copyConnectBtnInfo" onclick="copyConnectCommandInfo()">
+                            <i class="fa-solid fa-copy" id="copyConnectIconInfo"></i>
+                            <span id="copyConnectBtnTextInfo">Kopieren</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1959,7 +2006,7 @@
                             <div class="kb-key kb-bound" data-key="F1" data-action="Handy &ouml;ffnen" data-cat="system" data-icon="fa-mobile-screen">F1</div>
                             <div class="kb-key kb-bound" data-key="F2" data-action="Inventar &ouml;ffnen" data-cat="interaktion" data-icon="fa-bag-shopping">F2</div>
                             <div class="kb-key kb-bound" data-key="F3" data-action="Emote ausf&uuml;hren" data-cat="interaktion" data-icon="fa-face-laugh-wink">F3</div>
-                            <div class="kb-key kb-bound" data-key="F4" data-action="Freie Kamera (Deko-Modus)" data-cat="housing" data-icon="fa-camera">F4</div>
+                            <div class="kb-key kb-bound" data-key="F4" data-action="Radialmenü öffnen" data-cat="interaktion" data-icon="fa-circle-nodes">F4</div>
                             <div class="kb-spacer"></div>
                             <div class="kb-key kb-bound" data-key="F5" data-action="Mauszeiger an/aus (Deko-Modus)" data-cat="housing" data-icon="fa-mouse-pointer">F5</div>
                             <div class="kb-key kb-bound" data-key="F6" data-action="Actionmenü öffnen / UI ausblenden (Deko-Modus)" data-cat="interaktion" data-icon="fa-list">F6</div>
@@ -1974,7 +2021,7 @@
 
                         <!-- Row 1: Number Row -->
                         <div class="kb-row kb-row-gap">
-                            <div class="kb-key kb-bound" data-key="^" data-action="Radialmen&uuml; &ouml;ffnen" data-cat="interaktion" data-icon="fa-circle-nodes">^</div>
+                            <div class="kb-key" data-key="^">^</div>
                             <div class="kb-key" data-key="1">1</div>
                             <div class="kb-key" data-key="2">2</div>
                             <div class="kb-key" data-key="3">3</div>
@@ -2169,9 +2216,9 @@
                         <ul>
                             <li><kbd>F2</kbd> Inventar</li>
                             <li><kbd>F3</kbd> Emote</li>
+                            <li><kbd>F4</kbd> Radialmen&uuml;</li>
                             <li><kbd>F6</kbd> Actionmen&uuml;</li>
                             <li><kbd>Tab</kbd> Actionbar</li>
-                            <li><kbd>^</kbd> Radialmen&uuml;</li>
                             <li><kbd>Y</kbd> H&auml;nde heben</li>
                             <li><kbd>X</kbd> Abbrechen</li>
                         </ul>
@@ -2213,9 +2260,9 @@
                         <div style="padding: 12px 16px; font-size: 11px; color: var(--text-muted); background: rgba(0,0,0,0.15);">
                             <strong style="display:block;margin-bottom:6px;color:var(--text-main);font-size:11.5px;"><i class="fa-solid fa-couch"></i> Möbel-Einrichtung</strong>
                             <ul style="padding:0;margin:0;list-style:none;">
-                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F4</span> Freie Kamera</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F5</span> Freie Kamera (Deko-Modus)</li>
                                 <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F5</span> Cursor an/aus</li>
-                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F6</span> UI ausblenden</li>
+                                <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">F6</span> Actionmenü / UI ausblenden</li>
                                 <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">E</span> Möbel platzieren / Pos festlegen</li>
                                 <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">K</span> Bewegen / Rotieren</li>
                                 <li style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.02);font-size:11px;"><span style="color:var(--text-main);font-weight:bold;">Q</span> Achsen (Lokal/Welt)</li>
