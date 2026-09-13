@@ -12,9 +12,12 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style -->
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
+
+    <!-- Server Background Wallpaper -->
+    <div class="site-bg-wallpaper"></div>
 
     <!-- Glowing Background Lights -->
     <div class="ambient-glow">
@@ -959,7 +962,7 @@
                 <!-- Contact & General -->
                 <div class="im-card">
                     <h2><i class="fa-solid fa-circle-info text-accent"></i> Allgemeine Angaben</h2>
-                    <p><strong>Verantwortlich für den Inhalt dieser Webseite:</strong><br>Christian Unger</p>
+                    <p><strong>Verantwortlich für den Inhalt dieser Webseite:</strong><br>Christian Unger<br>Kai Heine</p>
                     <p>Dies ist ein rein privates, nicht kommerzielles Freizeitprojekt, das ausschließlich der Unterhaltung und der Gestaltung eines GTA 5 Online-Rollenspiel-Servers dient.</p>
                     
                     <h3>Kontaktmöglichkeiten:</h3>
@@ -968,7 +971,7 @@
                     
                     <div class="info-alert">
                         <strong>Hinweis zur Anschrift:</strong>
-                        <p>Da es sich bei Onlife Roleplay um ein rein privates und nicht auf Gewinnerzielung ausgerichtetes Freizeitprojekt von Christian Unger handelt, besteht gemäß § 5 TMG (bzw. DDG) keine Pflicht zur Angabe einer vollständigen Anschrift. Eine Kontaktaufnahme ist über die genannten digitalen Wege jederzeit möglich.</p>
+                        <p>Da es sich bei Onlife Roleplay um ein rein privates und nicht auf Gewinnerzielung ausgerichtetes Freizeitprojekt von Christian Unger &amp; Kai Heine handelt, besteht gemäß § 5 TMG (bzw. DDG) keine Pflicht zur Angabe einer vollständigen Anschrift. Eine Kontaktaufnahme ist über die genannten digitalen Wege jederzeit möglich.</p>
                     </div>
                 </div>
 
@@ -1209,10 +1212,38 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update v1.7.2 - 13. September 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v172">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v172')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.2</span>
+                                <span class="changelog-subtitle">Vanilla Unicorn Überarbeitung &amp; Server-Netzwerk Optimierung</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">13. September 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben &amp; Optimiert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Vanilla Unicorn:</strong> Komplett überarbeitet und modernisiert. Spielabstürze vor Ort wurden restlos behoben.</li>
+                                        <li><strong>Server &amp; Netzwerk:</strong> Plötzliche Timeouts und Verbindungsabbrüche behoben sowie Lagspikes bei automatischen Server-Speicherungen beseitigt.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update v1.7.1 - 18. August 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v171">
+                    <div class="changelog-accordion" id="changelog-v171">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v171')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.1</span>
@@ -1820,7 +1851,7 @@
                                 <div class="changelog-section">
                                     <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu</h4>
                                     <ul class="changelog-list">
-                                        <li>Veröffentlichung der brandneuen OnLifeRP Webseite gehostet über GitHub Pages!</li>
+                                        <li>Veröffentlichung der brandneuen OnLifeRP Webseite!</li>
                                         <li>Vollständig filterbare Live-Suche für das Regelwerk und das komplette Gesetzbuch (StGB, GG, WaffenG, BtMG) integriert.</li>
                                         <li>Saubere Bildergalerie mit 18 Ingame-Impressionen inklusive Lightbox-Vollbildvorschau und durchnummerierten Bildern.</li>
                                         <li>Neuen Bereich "Changelogs" als interaktive SPA-Timeline für alle kommenden Updates eingebunden.</li>
@@ -2318,7 +2349,7 @@
         <div class="footer-container">
             <div class="footer-info">
                 <p>&copy; 2026 OnLifeRP. Alle Rechte vorbehalten. Privatprojekt ohne kommerzielle Absichten.</p>
-                <p>Erstellt mit <i class="fa-solid fa-heart heart-pulse"></i> für die OnLife Community — Gehostet auf GitHub Pages.</p>
+                <p>Erstellt mit <i class="fa-solid fa-heart heart-pulse"></i> für die OnLife Community.</p>
             </div>
             <!-- Visitor Counter Pill -->
             <div class="visitor-counter" id="visitorCounter">
