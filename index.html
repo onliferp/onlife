@@ -137,6 +137,45 @@
                 <p>Bleibe auf dem Laufenden über aktuelle Neuigkeiten, Aktionen und Möglichkeiten auf OnLife RP.</p>
             </div>
 
+            <!-- Update v1.8.0 Release Banner -->
+            <div class="connection-card-wrapper" style="margin-bottom: 24px;">
+                <div class="connection-card" style="border-left: 4px solid var(--accent-red, #ff2a5f);">
+                    <div class="connection-card-header">
+                        <span class="badge-red" style="background: rgba(255, 42, 95, 0.2); color: #ff5e82; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bolt"></i> Frisch eingespielt: Update v1.8.0</span>
+                        <h2>KI-Support, Casino &amp; Slots und Fahrzeug-Fixes sind live!</h2>
+                    </div>
+                    <div class="connection-card-body">
+                        <p>Wir haben ein großes Update für euch veröffentlicht: Unser neuer <strong>Google Gemini KI-Support</strong> steht euch 24/7 ingame zur Seite, das brandneue <strong>OnLife Online-Casino</strong> mit Slots &amp; Roulette ist eröffnet und alle <strong>Garagen- &amp; Fahrzeug-Probleme</strong> wurden behoben!</p>
+                        <div class="supporter-perks">
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #1e3c72, #2a5298);"><i class="fa-solid fa-robot"></i></div>
+                                <div class="step-text">
+                                    <strong>KI-Support Bot</strong>
+                                    <span>Sofortige Hilfe, Chat-Button &amp; automatische GPS-Wegpunkte direkt im Spiel.</span>
+                                </div>
+                            </div>
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #7b1fa2, #e91e63);"><i class="fa-solid fa-dice"></i></div>
+                                <div class="step-text">
+                                    <strong>Online-Casino &amp; Slots</strong>
+                                    <span>Slot-Automaten, Kartenrisiko, Crash-Game, Mines &amp; Roulette mit fairem RTP.</span>
+                                </div>
+                            </div>
+                            <div class="supporter-perk">
+                                <div class="step-icon" style="background: linear-gradient(135deg, #11998e, #38ef7d);"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="step-text">
+                                    <strong>Fahrzeug- &amp; Garagen-Fix</strong>
+                                    <span>Ausparkfehler behoben und Migration aller Addon-Autos auf saubere Lore-Hashes.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="switchPage('changelogs')" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <i class="fa-solid fa-clock-rotate-left"></i> Vollständigen Changelog lesen
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Supporter Suche Banner -->
             <div class="connection-card-wrapper">
                 <div class="connection-card supporter-banner">
@@ -1212,10 +1251,53 @@
 
             <div class="changelog-timeline">
 
+                <!-- Update v1.8.0 - 22. Oktober 2026 -->
+                <div class="changelog-entry">
+                    <div class="changelog-dot"></div>
+                    <div class="changelog-accordion open" id="changelog-v180">
+                        <div class="changelog-card-header" onclick="toggleChangelog('changelog-v180')">
+                            <div class="changelog-title-area">
+                                <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.8.0</span>
+                                <span class="changelog-subtitle">KI-Support Assistent, Großes Casino &amp; Slot-Update sowie Fahrzeug- &amp; Garagen-Korrekturen</span>
+                            </div>
+                            <div class="changelog-meta-area">
+                                <span class="changelog-date">22. Oktober 2026</span>
+                                <i class="fa-solid fa-chevron-down changelog-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="changelog-card-content">
+                            <div class="changelog-card-content-inner">
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title new"><i class="fa-solid fa-plus-circle"></i> Neu &amp; Überarbeitet</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Intelligenter KI-Support (ol_ki_support):</strong> Neuer 24/7 Support-Assistent, direkt powered by Google Gemini AI! Beantwortet euch im Spiel sofort alle Fragen zu Server-Regeln, Tastenbelegungen, Jobs, Farmen, Housing, Tuning, Fahrzeugbau und Server-Features.</li>
+                                        <li><strong>Nahtlose Chat-Integration &amp; Befehl:</strong> Sobald der Chat geöffnet wird (Taste <kbd>T</kbd>), erscheint oben rechts im Bildschirm ein dezenter Support-Button. Alternativ kann das Support-Menü jederzeit über den Chatbefehl <code>/support</code> geöffnet werden.</li>
+                                        <li><strong>Smarte GPS-Wegpunkte:</strong> Fragt den Support-Bot nach Standorten (z.&nbsp;B. Arbeitsamt, Autohändler, Werkstatt, Krankenhaus, PD oder Garagen) und er setzt euch auf Wunsch direkt die Markierung und Navigation auf der Ingame-Karte!</li>
+                                        <li><strong>Support-Punkte &amp; Notfall-Belohnungen:</strong> Für aktive Spielzeit (1 Punkt pro 60 Minuten + Startguthaben) erhaltet ihr Support-Punkte. Diese können im Support-Menü für Notfall-Aktionen wie Sofortheilung oder Not-Wiederbelebung (nur aktiv, falls keine Mediziner im Dienst sind) eingetauscht werden.</li>
+                                        <li><strong>Quick-Chips für Neueinsteiger:</strong> Praktische Schnellwahl-Karten im Support-Fenster für die meistgestellten Anfängerfragen ohne langes Tippen.</li>
+                                        <li><strong>Großes Online-Casino &amp; Slot-System (ol_slot):</strong> Umfassendes Casino-System im roten OnLife-Design mit animierten Walzen, Soundeffekten, Früchten, Siebenen, Diamanten und Multiplikatoren bis zu x300.</li>
+                                        <li><strong>Spannende Casino-Minigames:</strong> Zusätzliche Casino-Spiele wie Kartenrisiko (Rot/Schwarz Verdoppler bis zu 5 Runden), Diamond Rocket Crash (Multiplikator steigt – cashe aus bevor die Rakete explodiert), Casino Mines (Minenfeld) und European Roulette mit Innen- und Außenwetten.</li>
+                                        <li><strong>Interaktives Admin-Prop-System:</strong> Admins können über <code>/slotcreator</code> mit interaktiver 3D-Ghost-Vorschau oder <code>/placeslot [modell]</code> Spielautomaten überall auf der Map live platzieren und verwalten (<code>/removeslot</code>, <code>/slotslist</code>). Mehr als 15 beleuchtete Arcade- und klassische Casino-Modelle stehen bereit.</li>
+                                        <li><strong>Faire Wirtschaft &amp; Inflationsschutz:</strong> Konfigurierbare RTP-Auszahlungsquoten, Gewinnchancen und Einsatzlimits (bis 5.000$) schützen die Serverwirtschaft zuverlässig vor Inflation.</li>
+                                    </ul>
+                                </div>
+                                <div class="changelog-section">
+                                    <h4 class="changelog-section-title fix"><i class="fa-solid fa-circle-check"></i> Behoben &amp; Optimiert</h4>
+                                    <ul class="changelog-list">
+                                        <li><strong>Garagen- &amp; Auspark-Fehlerbehebung:</strong> Kritischer Fehler behoben, bei dem Fahrzeuge nicht mehr aus der Garage ausgeparkt werden konnten oder nach Server-Updates im Garagen-Menü hängen blieben ("Fahrzeug nicht gefunden" / ungültiges Modell).</li>
+                                        <li><strong>Fahrzeug-Hash &amp; Lore-Spawncode Migration:</strong> Sämtliche betroffenen Addon-Fahrzeuge wurden auf saubere Lore-Hashes und Spawncodes migriert (u.&nbsp;a. <code>trabi601naj</code> &rarr; <code>bfvechsr</code>, <code>brkout</code> &rarr; <code>wdaemon</code>, <code>601c/601p</code> &rarr; <code>bfvechs/bfvechsp</code>, <code>mantab400</code> &rarr; <code>manya400</code>, <code>wartburg353</code> &rarr; <code>bfkolben</code>).</li>
+                                        <li><strong>Datenbank- &amp; Inventar-Synchronisation:</strong> Vollständige automatische Korrektur aller Fahrzeug-Metadaten in <code>owned_vehicles</code>, <code>advanced_vehicles</code>, <code>dealerships_creator_vehicles</code> sowie der zugehörigen Kofferräume und Handschuhfächer im <code>ox_inventory</code>. Alle Spieler können ihre Fahrzeuge nun wieder uneingeschränkt und fehlerfrei nutzen!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Update v1.7.2 - 13. September 2026 -->
                 <div class="changelog-entry">
                     <div class="changelog-dot"></div>
-                    <div class="changelog-accordion open" id="changelog-v172">
+                    <div class="changelog-accordion" id="changelog-v172">
                         <div class="changelog-card-header" onclick="toggleChangelog('changelog-v172')">
                             <div class="changelog-title-area">
                                 <span class="changelog-version"><i class="fa-solid fa-bolt"></i> Update v1.7.2</span>
@@ -2111,7 +2193,7 @@
                             <div class="kb-key" data-key="W">W</div>
                             <div class="kb-key kb-bound" data-key="E" data-action="Interagieren / M&ouml;bel platzieren / Position festlegen (Deko-Modus)" data-cat="housing" data-icon="fa-hand-pointer">E</div>
                             <div class="kb-key kb-bound" data-key="R" data-action="Nachladen" data-cat="bewegung" data-icon="fa-gun">R</div>
-                            <div class="kb-key kb-bound" data-key="T" data-action="Chat &ouml;ffnen" data-cat="kommunikation" data-icon="fa-comments">T</div>
+                            <div class="kb-key kb-bound" data-key="T" data-action="Chat &ouml;ffnen (inkl. KI-Support)" data-cat="kommunikation" data-icon="fa-comments">T</div>
                             <div class="kb-key" data-key="Z">Z</div>
                             <div class="kb-key kb-bound" data-key="U" data-action="Umfallen / Ragdoll" data-cat="bewegung" data-icon="fa-person-falling">U</div>
                             <div class="kb-key" data-key="I">I</div>
@@ -2311,7 +2393,8 @@
                     <div class="kb-legend-card">
                         <div class="kb-legend-cat-header kommunikation"><i class="fa-solid fa-comments"></i> Kommunikation</div>
                         <ul>
-                            <li><kbd>T</kbd> Chat &ouml;ffnen</li>
+                            <li><kbd>T</kbd> Chat &ouml;ffnen (inkl. KI-Support)</li>
+                            <li><kbd>/support</kbd> KI-Support Assistent</li>
                             <li><kbd>F11</kbd> Sprachweite</li>
                         </ul>
                     </div>

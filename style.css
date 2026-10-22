@@ -453,6 +453,17 @@ body.light-mode .changelog-list li:hover {
     border-color: rgba(0, 0, 0, 0.04);
 }
 
+body.light-mode .changelog-list li strong {
+    color: #0f172a;
+}
+
+body.light-mode .changelog-list li code,
+body.light-mode .changelog-list li kbd {
+    background: rgba(0, 0, 0, 0.06);
+    color: #0f172a;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
 body.light-mode ::-webkit-scrollbar-track {
     background: #f1f5f9;
 }
@@ -3228,11 +3239,27 @@ body.light-mode ::-webkit-scrollbar-thumb {
 .changelog-list li::before {
     position: absolute;
     left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 17px;
+    transform: none;
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     font-size: 12px;
+}
+
+.changelog-list li strong {
+    color: var(--text-main, #ffffff);
+    font-weight: 700;
+}
+
+.changelog-list li code,
+.changelog-list li kbd {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .changelog-section-title.new + .changelog-list li::before {
